@@ -1,13 +1,12 @@
 /* eslint-disable react/no-unknown-property */
 /* eslint-disable react/prop-types */
-import { Suspense, useContext, useEffect, useRef, useState } from "react";
+import { Suspense, useContext, useEffect, useState } from "react";
 import { Canvas, useThree } from "@react-three/fiber";
 import { Html, OrbitControls, useGLTF } from "@react-three/drei";
 import Marker3D from "../ui/Marker3D";
 import { AccesibilityContext } from "../contexts/AccesibilityContext";
 import * as THREE from "three";
 import { Box } from "@mui/material";
-import { useFrame } from "@react-three/fiber";
 
 export default function GLBViewer({
   model,
