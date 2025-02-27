@@ -9,12 +9,15 @@ export default function Marker3D({ caption, onClick }) {
       color="white"
       marginBottom={2}
       bgcolor={theme.palette.primary.main}
-      sx={{ borderRadius: "100%", border: "3px solid white" }}
+      sx={{
+        borderRadius: "100%",
+        border: "3px solid white",
+        cursor: "pointer",
+      }}
       display={"flex"}
       justifyContent="center"
       alignItems="center"
-      // onClick={() => onClick(Number(caption))}
-      //   onClick={() => setSelectedTooltip(Number(tooltip.caption))}
+      onClick={onClick}
     >
       <Typography variant="h6">{caption}</Typography>
     </Box>

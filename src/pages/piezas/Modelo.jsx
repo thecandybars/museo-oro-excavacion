@@ -18,7 +18,7 @@ export default function Modelo() {
       url: "/models/vasija.glb",
       defaultScale: 1,
       defaultCamera: [3, 3, 1],
-      tooltips: [
+      markers: [
         { id: 0, position: [1.5, 2, 0] },
         { id: 1, position: [1, 1, 1] },
         { id: 2, position: [2, 1, 1] },
@@ -29,23 +29,14 @@ export default function Modelo() {
       name: "Botijo",
       url: "/models/botijo_comp.glb",
       defaultScale: 0.18,
-      tooltips: [
+      markers: [
         { id: 0, position: [0.5, 0.5, 0.5] },
         { id: 1, position: [0, 0, 0] },
       ],
     },
-    {
-      id: 2,
-      name: "Pescado",
-      url: "/models/pescado.glb",
-      defaultScale: 10,
-      tooltips: [
-        { id: 0, position: [0.5, 0.5, 0.5] },
-        { id: 1, position: [1, 1, 0] },
-      ],
-    },
   ];
   const [selectedModel, setSelectedModel] = useState(models[0]);
+  console.log("🚀 ~ Modelo ~ selectedModel:", selectedModel);
 
   const zoomStep = 1.1;
   const onZoomOut = () => {

@@ -1,12 +1,11 @@
 /* eslint-disable react/prop-types */
-import { Button, Paper, Stack, Typography } from "@mui/material";
+import { Button, Paper, Stack, Typography, Box } from "@mui/material";
 import { Link } from "react-router";
-import { KeepScale } from "react-zoom-pan-pinch";
 import { CloseIcon } from "../utils/icons";
 import { useContext } from "react";
 import { AccesibilityContext } from "../contexts/AccesibilityContext";
 
-export default function MarkerTooltip({
+export default function MarkerTooltip3D({
   image,
   title,
   path,
@@ -15,9 +14,10 @@ export default function MarkerTooltip({
   positionTooltip,
   onClose,
 }) {
+  console.log("🚀 ~ image:", image);
   const { highContrast } = useContext(AccesibilityContext);
   return (
-    <KeepScale
+    <Box
       style={{
         position: "absolute",
         transform: "translateX(-50%)",
@@ -70,6 +70,6 @@ export default function MarkerTooltip({
           )}
         </Stack>
       </Paper>
-    </KeepScale>
+    </Box>
   );
 }

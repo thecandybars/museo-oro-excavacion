@@ -89,7 +89,17 @@ const translations = {
       sideTitle: "Excavación Arqueológica",
       sideParagraph:
         "Observa las diferentes capas de la excavación arqueológica. Haz clic en los puntos de interés para obtener más información y acceder a la vista 3D.",
+      markers: [
+        {
+          caption: "1",
+          title: "Pieza Arqueológica",
+          description:
+            "La descripción de la pieza arqueológica se muestra aquí. Haz clic en el botón para ver más detalles.",
+          button: "Ver pieza",
+        },
+      ],
     },
+
     piezas: {
       sideTitle: "Pieza Arqueológica",
       sideParagraph:
@@ -186,7 +196,17 @@ const translations = {
       sideTitle: "Archaeological excavation",
       sideParagraph:
         "Observe the different layers of the archaeological excavation. Click on points of interest to get more information and access the 3D view.",
+      markers: [
+        {
+          caption: "1",
+          title: "Archaeological piece",
+          description:
+            "This is the description of the archaeological piece. Click the button to see more details.",
+          button: "Go to piece",
+        },
+      ],
     },
+
     piezas: {
       sideTitle: "Archaeological piece",
       sideParagraph:
