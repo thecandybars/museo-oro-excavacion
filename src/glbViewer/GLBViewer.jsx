@@ -14,7 +14,6 @@ export default function GLBViewer({
   turnLight = true,
   zoomLevel = 5,
 }) {
-  console.log("🚀 ~ model:", model);
   const { highContrast } = useContext(AccesibilityContext);
   return (
     <Canvas style={{ filter: highContrast ? "invert(1)" : "none" }}>

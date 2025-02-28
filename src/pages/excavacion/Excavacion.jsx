@@ -1,7 +1,7 @@
 import { Box, Button } from "@mui/material";
 import PageWrapper from "../../ui/PageWrapper";
 import Side from "./Side";
-import GLBViewer from "../../glbViewer/GlbViewer";
+import GLBViewer from "../../glbViewer/GLBViewer";
 import { useContext, useMemo, useState } from "react";
 import ToolBoxWrapper from "../../ui/MapToolbox/ToolboxWrapper";
 import ZoomButton3D from "../../ui/MapToolbox/ZoomButton3D";
@@ -27,8 +27,8 @@ export default function Excavacion() {
   const model = {
     id: 0,
     name: "Excavacion",
-    url: "/models/house.glb",
-    defaultScale: 1,
+    url: "/models/casa-excavacion.glb",
+    defaultScale: 6,
     defaultCamera: [3, 3, 1],
     onOrbit: (pos) => setMarkerPosition(pos),
     markers: [
