@@ -1,5 +1,5 @@
 import { Box, Stack } from "@mui/material";
-import GLBViewer from "../../glbViewer/GlbViewer";
+import GLBViewer from "../../glbViewer/GLBViewer";
 import ToolBoxWrapper from "../../ui/MapToolbox/ToolboxWrapper";
 import { Button } from "@mui/material";
 import { useState } from "react";
