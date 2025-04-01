@@ -13,6 +13,7 @@ export default function GLBViewer({
   rotateModel = true,
   turnLight = true,
   zoomLevel = 5,
+  selectedLayer = "both",
 }) {
   const { highContrast } = useContext(AccesibilityContext);
   return (
@@ -24,7 +25,7 @@ export default function GLBViewer({
         intensity={turnLight ? 0.8 : 0.2}
       />
       <Suspense fallback={null}>
-        <Model model={model} />
+        <Model model={model} selectedLayer={selectedLayer} key={model.url} />
         <OrbitControls
           autoRotate={rotateModel}
           autoRotateSpeed={2}
@@ -38,90 +39,40 @@ export default function GLBViewer({
   );
 }
 
-// function Model({ model }) {
-//   const { scene } = useGLTF(model.url);
-//   const { camera, size } = useThree(); // Get camera and canvas size
-//   const [selectedMarker, setSelectedMarker] = useState(null);
-//   const [markerScreenPosition, setMarkerScreenPosition] = useState(null);
-//   console.log("🚀 ~ Model ~ markerScreenPosition:", markerScreenPosition);
-
-//   const markerRef = useRef();
-//   console.log("🚀 ~ Model ~ markerRef:", markerRef);
-
-//   const updateMarkerPosition = (marker) => {
-//     const worldPosition = new THREE.Vector3(...marker.position);
-//     const ndc = worldPosition.project(camera);
-//     const x = ((ndc.x + 1) / 2) * size.width;
-//     const y = ((1 - ndc.y) / 2) * size.height;
-//     setMarkerScreenPosition({ x, y });
-//   };
-
-//   useFrame(() => {
-//     if (selectedMarker) {
-//       console.log("🚀 ~ Model ~ selectedMarker:", selectedMarker);
-//       const marker = model.markers.find(
-//         (marker) => marker.id === selectedMarker
-//       );
-//       if (marker) updateMarkerPosition(marker);
-//     }
-//   });
-
-//   const handleOnClick = (marker) => {
-//     setSelectedMarker(marker.id);
-//     updateMarkerPosition(marker); // Initial calculation
-//   };
-
-//   return (
-//     <>
-//       <group>
-//         <primitive
-//           object={scene}
-//           scale={[model.defaultScale, model.defaultScale, model.defaultScale]}
-//         />
-//         {model.markers?.map((marker) => (
-//           <Html
-//             key={marker.id}
-//             position={marker.position}
-//             distanceFactor={5}
-//             ref={markerRef}
-//           >
-//             <Marker3D
-//               caption={`${marker.id + 1}`}
-//               onClick={() => handleOnClick(marker)}
-//             />
-//           </Html>
-//         ))}
-//       </group>
-//     </>
-//   );
-// }
-
-function Model({ model }) {
+function Model({ model, selectedLayer }) {
   const { highContrast } = useContext(AccesibilityContext);
-
   const { scene } = useGLTF(model.url);
+  console.log("🚀 ~ Model ~ scene:", scene);
   const { camera } = useThree();
   const [selectedMarker, setSelectedMarker] = useState(null);
-  console.log("🚀 ~ Model ~ selectedMarker:", selectedMarker);
+
+  if (scene.children.length > 1 && selectedLayer) {
+    scene.children[0].visible = selectedLayer !== "first";
+    scene.children[1].visible = selectedLayer !== "second";
+  }
 
   useEffect(() => {
+    // Compute the bounding box and its center
     const box = new THREE.Box3().setFromObject(scene);
     const center = box.getCenter(new THREE.Vector3());
     const size = box.getSize(new THREE.Vector3());
-
     const maxDim = Math.max(size.x, size.y, size.z);
     const fov = camera.fov * (Math.PI / 180);
     const distance = Math.abs(maxDim / Math.sin(fov / 2));
 
-    camera.position.set(center.x, center.y, center.z + distance / 2);
-    camera.lookAt(center.x, center.y, center.z);
-    // setTarget(center.clone());
-  }, [scene, camera]);
+    // Shift the scene so the center of the bounding box is at (0, 0, 0)
+    scene.position.sub(center);
+
+    // Position the camera so the model fits nicely in view (centered at origin)
+    camera.position.set(0, 0, distance / 2);
+    camera.lookAt(0, 0, 0);
+  }, [scene, camera, model.url]);
 
   const handleOnClick = (marker) => {
     marker.onClick();
     setSelectedMarker(marker.id);
   };
+
   return (
     <group>
       <primitive
@@ -149,12 +100,6 @@ function Model({ model }) {
           </Box>
         </Html>
       ))}
-      {/* Helpers */}
-      {/* <boxHelper args={[scene, 0xff0000]} /> */}
-      {/* <mesh position={[target.x, target.y, target.z]}>
-        <sphereGeometry args={[0.1, 16, 16]} />
-        <meshBasicMaterial color="blue" />
-      </mesh> */}
     </group>
   );
 }

@@ -25,7 +25,15 @@ export default function Header() {
   const { lang } = useContext(LanguageContext);
   const t = translations[lang].header;
   return (
-    <Box component="nav" sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+    <Box
+      component="nav"
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        gap: 2,
+        boxShadow: "0 8px 8px -8px rgba(0, 0, 0, 0.1)",
+      }}
+    >
       <Box sx={{ width: "25%" }}>
         <Link to="/">
           <img

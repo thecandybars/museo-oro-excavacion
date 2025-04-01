@@ -8,6 +8,7 @@ export const theme = {
   palette: {
     primary: {
       main: "#a67c00",
+      light: "#d3af44",
     },
     secondary: {
       main: "#005f6a",

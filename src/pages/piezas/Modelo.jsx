@@ -24,19 +24,89 @@ export default function Modelo() {
         { id: 2, position: [2, 1, 1] },
       ],
     },
+    // {
+    //   id: 1,
+    //   name: "Botijo",
+    //   url: "/models/botijo.glb",
+    //   defaultScale: 0.18,
+    //   markers: [
+    //     { id: 0, position: [0.5, 0.5, 0.5] },
+    //     { id: 1, position: [0, 0, 0] },
+    //   ],
+    // },
     {
-      id: 1,
-      name: "Botijo",
-      url: "/models/botijo_comp.glb",
+      id: 2,
+      name: "Botella",
+      url: "/models/botella.glb",
       defaultScale: 0.18,
       markers: [
-        { id: 0, position: [0.5, 0.5, 0.5] },
-        { id: 1, position: [0, 0, 0] },
+        // { id: 0, position: [0.5, 0.5, 0.5] },
+        // { id: 1, position: [0, 0, 0] },
+      ],
+    },
+    {
+      id: 3,
+      name: "Cepillo",
+      url: "/models/cepillo.glb",
+      defaultScale: 0.18,
+      markers: [
+        // { id: 0, position: [0.5, 0.5, 0.5] },
+        // { id: 1, position: [0, 0, 0] },
+      ],
+    },
+    {
+      id: 4,
+      name: "Embudo",
+      url: "/models/embudo.glb",
+      defaultScale: 0.18,
+      markers: [
+        // { id: 0, position: [0.5, 0.5, 0.5] },
+        // { id: 1, position: [0, 0, 0] },
+      ],
+    },
+    {
+      id: 5,
+      name: "Plato",
+      url: "/models/plato.glb",
+      defaultScale: 0.18,
+      markers: [
+        // { id: 0, position: [0.5, 0.5, 0.5] },
+        // { id: 1, position: [0, 0, 0] },
+      ],
+      // selectedChild: "first",
+    },
+    {
+      id: 6,
+      name: "Taza",
+      url: "/models/taza.glb",
+      defaultScale: 0.18,
+      markers: [
+        // { id: 0, position: [0.5, 0.5, 0.5] },
+        // { id: 1, position: [0, 0, 0] },
+      ],
+    },
+    // {
+    //   id: 7,
+    //   name: "Vasinica",
+    //   url: "/models/vasinica.glb",
+    //   defaultScale: 0.18,
+    //   markers: [
+    //     // { id: 0, position: [0.5, 0.5, 0.5] },
+    //     // { id: 1, position: [0, 0, 0] },
+    //   ],
+    // },
+    {
+      id: 8,
+      name: "Bacin",
+      url: "/models/bacin.glb",
+      defaultScale: 0.18,
+      markers: [
+        // { id: 0, position: [0.5, 0.5, 0.5] },
+        // { id: 1, position: [0, 0, 0] },
       ],
     },
   ];
-  const [selectedModel, setSelectedModel] = useState(models[0]);
-  console.log("🚀 ~ Modelo ~ selectedModel:", selectedModel);
+  const [selectedModel, setSelectedModel] = useState(models[1]);
 
   const zoomStep = 1.1;
   const onZoomOut = () => {
@@ -54,11 +124,25 @@ export default function Modelo() {
     <Button
       key={model.id}
       variant="contained"
-      onClick={() => setSelectedModel(model)}
+      onClick={() => {
+        setSelectedModel(model);
+        setSelectedLayer(0);
+      }}
+      sx={{
+        borderLeft:
+          selectedModel.id === model.id
+            ? `5px solid ${theme.palette.primary.light}}`
+            : "none",
+        borderLeftStyle: "inset",
+      }}
     >
       {model.name}
     </Button>
   ));
+
+  // selectedLayer
+  const enumLayers = ["both", "first", "second"];
+  const [selectedLayer, setSelectedLayer] = useState(0);
 
   return (
     <Box height={1} display="flex">
@@ -68,6 +152,7 @@ export default function Modelo() {
           rotateModel={rotateModel}
           turnLight={turnLight}
           zoomLevel={zoomLevel}
+          selectedLayer={enumLayers[selectedLayer]}
         />
         <ToolBoxWrapper>
           <ZoomButton3D
@@ -106,6 +191,9 @@ export default function Modelo() {
             }}
           >
             <Light3D />
+          </Button>
+          <Button onClick={() => setSelectedLayer((prev) => (prev + 1) % 3)}>
+            {selectedLayer}
           </Button>
         </ToolBoxWrapper>
       </Box>

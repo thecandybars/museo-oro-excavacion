@@ -10,6 +10,7 @@ import { Light3D, Rotate3D } from "../../utils/icons";
 import MarkerTooltip3D from "../../ui/MarkerTooltip3D";
 import { LanguageContext } from "../../contexts/LanguageContext";
 import translations from "../../utils/translations";
+import GLBAnimation from "../../glbViewer/GLBAnimation";
 
 export default function Excavacion() {
   const [rotateModel, setRotateModel] = useState(false);
@@ -27,10 +28,10 @@ export default function Excavacion() {
   const model = {
     id: 0,
     name: "Excavacion",
-    url: "/models/casa-excavacion.glb",
+    url: "/models/casa-3d-export-4.glb",
     defaultScale: 6,
     defaultCamera: [3, 3, 1],
-    onOrbit: (pos) => setMarkerPosition(pos),
+    // onOrbit: (pos) => setMarkerPosition(pos),
     markers: [
       {
         id: 0,
@@ -52,7 +53,6 @@ export default function Excavacion() {
       },
     [model.markers, selectedMarker, tooltipTexts]
   );
-  console.log("🚀 ~ Excavacion ~ tooltip:", tooltip);
 
   // ZOOM
   const zoomStep = 1.1;
@@ -69,12 +69,13 @@ export default function Excavacion() {
     <PageWrapper>
       <Side />
       <Box position="relative" width="100%" bgcolor="#eee" height="100%">
-        <GLBViewer
+        {/* <GLBViewer
           model={model}
           rotateModel={rotateModel}
           turnLight={turnLight}
           zoomLevel={zoomLevel}
-        />
+        /> */}
+        <GLBAnimation />
         {tooltip && (
           <MarkerTooltip3D
             image={tooltip?.image}
@@ -87,7 +88,7 @@ export default function Excavacion() {
           />
         )}
 
-        <ToolBoxWrapper>
+        {/* <ToolBoxWrapper>
           <ZoomButton3D
             onZoomIn={onZoomIn}
             onZoomOut={onZoomOut}
@@ -125,7 +126,7 @@ export default function Excavacion() {
           >
             <Light3D />
           </Button>
-        </ToolBoxWrapper>
+        </ToolBoxWrapper> */}
       </Box>
     </PageWrapper>
   );
