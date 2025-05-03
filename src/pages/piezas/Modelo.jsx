@@ -66,7 +66,7 @@ export default function Modelo() {
     //   defaultScale: 0.18,
     // },
   ];
-  const [selectedModel, setSelectedModel] = useState(models[3]);
+  const [selectedModel, setSelectedModel] = useState(models[0]);
 
   const zoomStep = 1.1;
   const onZoomOut = () => {
