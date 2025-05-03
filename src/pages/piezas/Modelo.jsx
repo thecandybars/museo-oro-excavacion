@@ -6,107 +6,67 @@ import { useState } from "react";
 import { Rotate3D, Light3D } from "../../utils/icons";
 import ZoomButton3D from "../../ui/MapToolbox/ZoomButton3D";
 import { theme } from "../../utils/theme/ThemeProviderWrapper";
+import uno from "/1.svg";
+import dos from "/2.svg";
+import tres from "/3.svg";
+import LoadingAnimation from "../../ui/LoadingAnimation";
+// import MarkerTooltip3D from "../../ui/MarkerTooltip3D";
 export default function Modelo() {
   const [rotateModel, setRotateModel] = useState(false);
   const [turnLight, setTurnLight] = useState(true);
   const [zoomLevel, setZoomLevel] = useState(1);
 
   const models = [
-    {
-      id: 0,
-      name: "Vasija",
-      url: "/models/vasija.glb",
-      defaultScale: 1,
-      defaultCamera: [3, 3, 1],
-      markers: [
-        { id: 0, position: [1.5, 2, 0] },
-        { id: 1, position: [1, 1, 1] },
-        { id: 2, position: [2, 1, 1] },
-      ],
-    },
     // {
     //   id: 1,
     //   name: "Botijo",
     //   url: "/models/botijo.glb",
     //   defaultScale: 0.18,
-    //   markers: [
-    //     { id: 0, position: [0.5, 0.5, 0.5] },
-    //     { id: 1, position: [0, 0, 0] },
-    //   ],
     // },
-    {
-      id: 2,
-      name: "Botella",
-      url: "/models/botella.glb",
-      defaultScale: 0.18,
-      markers: [
-        // { id: 0, position: [0.5, 0.5, 0.5] },
-        // { id: 1, position: [0, 0, 0] },
-      ],
-    },
-    {
-      id: 3,
-      name: "Cepillo",
-      url: "/models/cepillo.glb",
-      defaultScale: 0.18,
-      markers: [
-        // { id: 0, position: [0.5, 0.5, 0.5] },
-        // { id: 1, position: [0, 0, 0] },
-      ],
-    },
+    // {
+    //   id: 2,
+    //   name: "Botella",
+    //   url: "/models/botella.glb",
+    //   defaultScale: 0.18,
+    // },
+    // {
+    //   id: 3,
+    //   name: "Cepillo",
+    //   url: "/models/cepillo.glb",
+    //   defaultScale: 0.18,
+    // },
     {
       id: 4,
       name: "Embudo",
       url: "/models/embudo.glb",
       defaultScale: 0.18,
-      markers: [
-        // { id: 0, position: [0.5, 0.5, 0.5] },
-        // { id: 1, position: [0, 0, 0] },
-      ],
     },
     {
       id: 5,
       name: "Plato",
       url: "/models/plato.glb",
       defaultScale: 0.18,
-      markers: [
-        // { id: 0, position: [0.5, 0.5, 0.5] },
-        // { id: 1, position: [0, 0, 0] },
-      ],
-      // selectedChild: "first",
     },
-    {
-      id: 6,
-      name: "Taza",
-      url: "/models/taza.glb",
-      defaultScale: 0.18,
-      markers: [
-        // { id: 0, position: [0.5, 0.5, 0.5] },
-        // { id: 1, position: [0, 0, 0] },
-      ],
-    },
+    // {
+    //   id: 6,
+    //   name: "Taza",
+    //   url: "/models/taza.glb",
+    //   defaultScale: 0.18,
+    // },
     // {
     //   id: 7,
     //   name: "Vasinica",
     //   url: "/models/vasinica.glb",
-    //   defaultScale: 0.18,
-    //   markers: [
-    //     // { id: 0, position: [0.5, 0.5, 0.5] },
-    //     // { id: 1, position: [0, 0, 0] },
-    //   ],
+    //   defaultScale: 1,
     // },
-    {
-      id: 8,
-      name: "Bacin",
-      url: "/models/bacin.glb",
-      defaultScale: 0.18,
-      markers: [
-        // { id: 0, position: [0.5, 0.5, 0.5] },
-        // { id: 1, position: [0, 0, 0] },
-      ],
-    },
+    // {
+    //   id: 8,
+    //   name: "Bacin",
+    //   url: "/models/bacin.glb",
+    //   defaultScale: 0.18,
+    // },
   ];
-  const [selectedModel, setSelectedModel] = useState(models[1]);
+  const [selectedModel, setSelectedModel] = useState(models[3]);
 
   const zoomStep = 1.1;
   const onZoomOut = () => {
@@ -127,6 +87,7 @@ export default function Modelo() {
       onClick={() => {
         setSelectedModel(model);
         setSelectedLayer(0);
+        setIsReady(false);
       }}
       sx={{
         borderLeft:
@@ -141,19 +102,58 @@ export default function Modelo() {
   ));
 
   // selectedLayer
-  const enumLayers = ["both", "first", "second"];
+  const modelLayers = {
+    0: {
+      name: "both",
+      icon: uno,
+    },
+    1: {
+      name: "first",
+      icon: dos,
+    },
+    2: {
+      name: "second",
+      icon: tres,
+    },
+  };
   const [selectedLayer, setSelectedLayer] = useState(0);
+
+  // Mouse
+  const [isClicked, setIsClicked] = useState(false);
+
+  //
+  const [isReady, setIsReady] = useState(false);
 
   return (
     <Box height={1} display="flex">
-      <Box position="relative" width="100%" bgcolor="#eee">
+      <Box
+        position="relative"
+        width="100%"
+        bgcolor="#ddd"
+        sx={{ cursor: isClicked ? "grabbing" : "grab" }}
+        onMouseDown={() => setIsClicked(true)}
+        onMouseUp={() => setIsClicked(false)}
+      >
+        <LoadingAnimation open={!isReady} />
         <GLBViewer
           model={selectedModel}
           rotateModel={rotateModel}
           turnLight={turnLight}
           zoomLevel={zoomLevel}
-          selectedLayer={enumLayers[selectedLayer]}
+          selectedLayer={modelLayers[selectedLayer].name}
+          onReady={() => setIsReady(true)}
         />
+        {/* {tooltip && (
+          <MarkerTooltip3D
+            image={tooltip?.image}
+            title={tooltip?.title}
+            description={tooltip?.description}
+            button={tooltip?.button}
+            path={tooltip?.path}
+            positionTooltip={{ x: 50, y: 50 }}
+            onClose={() => tooltip.onClose()}
+          />
+        )} */}
         <ToolBoxWrapper>
           <ZoomButton3D
             onZoomIn={onZoomIn}
@@ -192,8 +192,26 @@ export default function Modelo() {
           >
             <Light3D />
           </Button>
-          <Button onClick={() => setSelectedLayer((prev) => (prev + 1) % 3)}>
-            {selectedLayer}
+          <Button
+            color="primary"
+            onClick={() => setSelectedLayer((prev) => (prev + 1) % 3)}
+            sx={{
+              borderRadius: 100,
+              height: "60px",
+              width: "60px",
+              backgroundColor: theme.palette.primary.main,
+            }}
+          >
+            <img
+              src={modelLayers[selectedLayer].icon}
+              width={40}
+              height={40}
+              style={{
+                borderRadius: 100,
+                filter:
+                  "brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(233deg) brightness(104%) contrast(104%)",
+              }}
+            />
           </Button>
         </ToolBoxWrapper>
       </Box>

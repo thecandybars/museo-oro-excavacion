@@ -11,3 +11,5 @@ export { default as Rotate3D } from "@mui/icons-material/ThreeSixty";
 export { default as Light3D } from "@mui/icons-material/Lightbulb";
 export { default as TextIncreaseIcon } from "@mui/icons-material/TextIncrease";
 export { default as VisibilityIcon } from "@mui/icons-material/Visibility";
+export { default as SkipNextIcon } from "@mui/icons-material/SkipNext";
+export { default as CircleIcon } from "@mui/icons-material/Circle";

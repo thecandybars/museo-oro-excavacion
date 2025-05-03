@@ -1,21 +1,20 @@
 /* eslint-disable react/prop-types */
-import { Box, Button, Slide } from "@mui/material";
+import { Box, Button, Collapse } from "@mui/material";
 import {
   AddIcon,
   RemoveIcon,
   ZoomToolIcon,
   ResetIcon,
 } from "../../utils/icons";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { theme } from "../../utils/theme/ThemeProviderWrapper";
 
 const ZoomButton3D = ({ onZoomIn, onZoomOut, onZoomReset }) => {
   const [openSlider, setOpenSlider] = useState(false);
-  const buttonRef = useRef();
 
   return (
     <Box display="flex" alignItems={"center"} justifyContent="flex-end" gap={0}>
-      <Slide direction="left" in={openSlider} container={buttonRef.current}>
+      <Collapse orientation="horizontal" in={openSlider}>
         <Box
           display="flex"
           justifyContent="flex-end"
@@ -41,9 +40,8 @@ const ZoomButton3D = ({ onZoomIn, onZoomOut, onZoomReset }) => {
             <ResetIcon />
           </ZoomToolButton>
         </Box>
-      </Slide>
+      </Collapse>
       <Button
-        ref={buttonRef}
         variant="contained"
         color="primary"
         onClick={() => setOpenSlider((prev) => !prev)}

@@ -1,12 +1,11 @@
 /* eslint-disable react/no-unknown-property */
 /* eslint-disable react/prop-types */
-import { Suspense, useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { Canvas, useThree } from "@react-three/fiber";
-import { Html, OrbitControls, useGLTF } from "@react-three/drei";
-import Marker3D from "../ui/Marker3D";
+import { OrbitControls, useGLTF } from "@react-three/drei";
+// import Marker3D from "../ui/Marker3D";
 import { AccesibilityContext } from "../contexts/AccesibilityContext";
 import * as THREE from "three";
-import { Box } from "@mui/material";
 
 export default function GLBViewer({
   model,
@@ -14,37 +13,40 @@ export default function GLBViewer({
   turnLight = true,
   zoomLevel = 5,
   selectedLayer = "both",
+  onReady,
 }) {
   const { highContrast } = useContext(AccesibilityContext);
+
   return (
     <Canvas style={{ filter: highContrast ? "invert(1)" : "none" }}>
       <CameraController zoomLevel={zoomLevel} />
-      <ambientLight intensity={0.8} />
+      <ambientLight intensity={turnLight ? 1.8 : 1.2} />
       <directionalLight
-        position={[5, 5, 5]}
+        position={[5, 50, 5]}
         intensity={turnLight ? 0.8 : 0.2}
       />
-      <Suspense fallback={null}>
-        <Model model={model} selectedLayer={selectedLayer} key={model.url} />
-        <OrbitControls
-          autoRotate={rotateModel}
-          autoRotateSpeed={2}
-          // onChange={(event) => {
-          //   const { x, y, z } = event.target.object.position;
-          //   console.log(`Camera Position: x=${x}, y=${y}, z=${z}`);
-          // }}
-        />
-      </Suspense>
+      <Model
+        model={model}
+        selectedLayer={selectedLayer}
+        key={model.url}
+        onReady={onReady}
+      />
+      <OrbitControls
+        autoRotate={rotateModel}
+        autoRotateSpeed={2}
+        // onChange={(event) => {
+        //   const { x, y, z } = event.target.object.position;
+        //   console.log(`Camera Position: x=${x}, y=${y}, z=${z}`);
+        // }}
+      />
     </Canvas>
   );
 }
 
-function Model({ model, selectedLayer }) {
-  const { highContrast } = useContext(AccesibilityContext);
+function Model({ model, selectedLayer, onReady }) {
   const { scene } = useGLTF(model.url);
-  console.log("🚀 ~ Model ~ scene:", scene);
   const { camera } = useThree();
-  const [selectedMarker, setSelectedMarker] = useState(null);
+  // const [selectedMarker, setSelectedMarker] = useState(null);
 
   if (scene.children.length > 1 && selectedLayer) {
     scene.children[0].visible = selectedLayer !== "first";
@@ -66,12 +68,13 @@ function Model({ model, selectedLayer }) {
     // Position the camera so the model fits nicely in view (centered at origin)
     camera.position.set(0, 0, distance / 2);
     camera.lookAt(0, 0, 0);
-  }, [scene, camera, model.url]);
+    if (onReady) onReady();
+  }, [model.url]);
 
-  const handleOnClick = (marker) => {
-    marker.onClick();
-    setSelectedMarker(marker.id);
-  };
+  // const handleOnClick = (marker) => {
+  //   marker.onClick();
+  //   setSelectedMarker(marker.id);
+  // };
 
   return (
     <group>
@@ -79,7 +82,7 @@ function Model({ model, selectedLayer }) {
         object={scene}
         scale={[model.defaultScale, model.defaultScale, model.defaultScale]}
       />
-      {model.markers?.map((marker) => (
+      {/* {model.markers?.map((marker) => (
         <Html
           key={marker.id}
           position={marker.position}
@@ -99,7 +102,7 @@ function Model({ model, selectedLayer }) {
             />
           </Box>
         </Html>
-      ))}
+      ))} */}
     </group>
   );
 }

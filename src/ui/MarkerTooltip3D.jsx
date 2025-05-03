@@ -14,7 +14,6 @@ export default function MarkerTooltip3D({
   positionTooltip,
   onClose,
 }) {
-  console.log("🚀 ~ image:", image);
   const { highContrast } = useContext(AccesibilityContext);
   return (
     <Box

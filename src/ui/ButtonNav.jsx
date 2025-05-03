@@ -3,7 +3,7 @@ import { Button, Typography } from "@mui/material";
 import { Link } from "react-router";
 import { theme } from "../utils/theme/ThemeProviderWrapper";
 
-export default function ButtonNav({ text, to, onClick }) {
+export default function ButtonNav({ text, to, onClick, style }) {
   return (
     <Button
       component={Link}
@@ -14,6 +14,7 @@ export default function ButtonNav({ text, to, onClick }) {
       sx={{
         borderRadius: 100,
         border: "1px solid" + theme.palette.primary.main,
+        ...style,
       }}
     >
       <Typography variant="h6"> {text}</Typography>

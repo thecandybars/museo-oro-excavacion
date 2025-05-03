@@ -39,9 +39,14 @@ export default function ThemeProviderWrapper({ children }) {
             fontSize: `${1.8 * fontScaler}rem`,
             marginBottom: "1rem",
           },
+          h2: {
+            fontWeight: 700,
+            fontSize: `${1.6 * fontScaler}rem`,
+            marginBottom: "1rem",
+          },
           h3: {
             fontWeight: 500,
-            fontSize: `${0.9 * fontScaler}rem`,
+            fontSize: `${1.3 * fontScaler}rem`,
           },
           h4: {
             fontWeight: 500,

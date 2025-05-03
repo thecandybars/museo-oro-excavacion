@@ -5,10 +5,10 @@ import { useGLTF } from "@react-three/drei";
 import { AnimationMixer } from "three";
 
 import { forwardRef, useImperativeHandle } from "react";
-import { Link } from "react-router";
+import LoadingAnimation from "../ui/LoadingAnimation";
 
 const GLBScene = forwardRef(function GLBScene(
-  { url, targetProgress, isPlaying, onStop },
+  { url, targetProgress, isPlaying, onStop, onReady },
   ref
 ) {
   const group = useRef();
@@ -16,6 +16,8 @@ const GLBScene = forwardRef(function GLBScene(
   const mixer = useRef();
   const action = useRef();
   const duration = useRef(0);
+
+  if (scene && onReady) onReady();
 
   useEffect(() => {
     if (animations && animations.length > 0) {
@@ -64,10 +66,19 @@ const GLBScene = forwardRef(function GLBScene(
   return <primitive ref={group} object={scene} />;
 });
 
-export default function GLBAnimation() {
+export default function GLBAnimation({ step, onPlaying }) {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isReady, setIsReady] = useState(false);
   const [targetProgress, setTargetProgress] = useState(0.5);
   const sceneRef = useRef();
+
+  useEffect(() => {
+    handleReset();
+  }, [sceneRef]);
+
+  useEffect(() => {
+    onPlaying(isPlaying);
+  }, [onPlaying, isPlaying]);
 
   const handlePlay = (time) => {
     setTargetProgress(time || 0.5);
@@ -81,45 +92,19 @@ export default function GLBAnimation() {
     sceneRef.current?.reset();
   };
 
-  const [step, setStep] = useState(1);
-  console.log("🚀 ~ GLBAnimation ~ step:", step);
-  const handleSteps = () => {
+  useEffect(() => {
     if (step === 0) handleReset();
     if (step === 1) handlePlay(0.5);
     if (step === 2) handlePlay(0.96);
-  };
+  }, [step]);
+
+  useEffect(() => {
+    isReady && handleReset();
+  }, [isReady]);
 
   return (
     <>
-      {step === 0 && (
-        <button
-          style={{
-            position: "absolute",
-            top: 170,
-            left: 20,
-            zIndex: 1,
-            padding: "8px 12px",
-          }}
-        >
-          <Link to="/piezas"> Explorar piezas</Link>
-        </button>
-      )}
-      <button
-        onClick={() => {
-          handleSteps();
-          setStep((prevStep) => (prevStep + 1) % 3);
-        }}
-        style={{
-          position: "absolute",
-          top: 220,
-          left: 20,
-          zIndex: 1,
-          padding: "8px 12px",
-        }}
-      >
-        Avanzar
-      </button>
-
+      <LoadingAnimation open={!isReady} />
       <Canvas camera={{ position: [0, 2, 5], fov: 50 }}>
         <ambientLight />
         <GLBScene
@@ -128,6 +113,7 @@ export default function GLBAnimation() {
           isPlaying={isPlaying}
           targetProgress={targetProgress}
           onStop={handleStop}
+          onReady={() => setIsReady(true)}
         />
       </Canvas>
     </>

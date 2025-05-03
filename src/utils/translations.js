@@ -8,8 +8,18 @@ const translations = {
         menuContrast: "Alto Contraste",
       },
     },
-    main: {
-      sideTitle: "Mapa de Cartagena",
+    inicio: {
+      titulo: "Seretos de una casa cartagenera",
+      indice: [
+        "La ciudad colonial",
+        // "La casa colonial",
+        "Excavaciones en la casa",
+        "Los objetos",
+      ],
+      boton: "Iniciar recorrido",
+    },
+    map: {
+      sideTitle: "La ciudad colonial",
       sideParagraph:
         "Explora los puntos de interés arqueológico en este mapa detallado de Cartagena. Haz clic en los marcadores para obtener más información sobre cada ubicación.",
       sideBibliography: {
@@ -37,13 +47,13 @@ const translations = {
       markers: [
         {
           caption: "1",
-          title: "Plaza de la Aduana",
+          title: "Plaza Mayor",
           description: "Centro Histórico de Cartagena",
           button: "Visitar Casa Colonial",
         },
         {
           caption: "2",
-          title: "Plaza de San Pedro Claver",
+          title: "Plaza Real",
           description: "Importante sitio histórico y religioso",
           button: "",
         },
@@ -86,22 +96,32 @@ const translations = {
       ],
     },
     excavacion: {
-      sideTitle: "Excavación Arqueológica",
+      sideTitle: "Excavaciones en la casa",
       sideParagraph:
         "Observa las diferentes capas de la excavación arqueológica. Haz clic en los puntos de interés para obtener más información y acceder a la vista 3D.",
       markers: [
         {
           caption: "1",
-          title: "Pieza Arqueológica",
+          title: "Excavación Arqueológica",
           description:
-            "La descripción de la pieza arqueológica se muestra aquí. Haz clic en el botón para ver más detalles.",
-          button: "Ver pieza",
+            "La descripción de la excavación arqueológica se muestra aquí.",
+          button: "Cerrar",
+        },
+        {
+          caption: "2",
+          title: "Excavación Arqueológica",
+          description:
+            "La descripción de la excavación arqueológica se muestra aquí.",
+          button: "Cerrar",
         },
       ],
+      botones: {
+        linkPiezas: "Explorar piezas",
+      },
     },
 
     piezas: {
-      sideTitle: "Pieza Arqueológica",
+      sideTitle: "Los objetos",
       sideParagraph:
         "Explora esta pieza arqueológica en detalle utilizando las herramientas disponibles.",
     },
@@ -115,8 +135,18 @@ const translations = {
         menuContrast: "Higher Contrast",
       },
     },
-    main: {
-      sideTitle: "Map of Cartagena",
+    inicio: {
+      titulo: "Secrets of a Cartagena House",
+      indice: [
+        "The colonial city",
+        // "The colonial house",
+        "House excavations",
+        "The objects",
+      ],
+      boton: "Start tour",
+    },
+    map: {
+      sideTitle: "The colonial city",
       sideParagraph:
         "Explore the archaeological points of interest on this detailed map of Cartagena. Click on the markers to get more information about each location.",
       sideBibliography: {
@@ -144,13 +174,13 @@ const translations = {
       markers: [
         {
           caption: "1",
-          title: "Plaza de la Aduana",
+          title: "Plaza Mayor",
           description: "Cartagena's historic downtown",
           button: "Visit Colonial House",
         },
         {
           caption: "2",
-          title: "Plaza de San Pedro Claver",
+          title: "Plaza Real",
           description: "Important historical and religious site",
           button: "",
         },
@@ -193,7 +223,7 @@ const translations = {
       ],
     },
     excavacion: {
-      sideTitle: "Archaeological excavation",
+      sideTitle: "House excavations",
       sideParagraph:
         "Observe the different layers of the archaeological excavation. Click on points of interest to get more information and access the 3D view.",
       markers: [
@@ -205,10 +235,13 @@ const translations = {
           button: "Go to piece",
         },
       ],
+      botones: {
+        linkPiezas: "Explore pieces",
+      },
     },
 
     piezas: {
-      sideTitle: "Archaeological piece",
+      sideTitle: "The objects",
       sideParagraph:
         "Explore this archaeological piece in detail using the tools available.",
     },
