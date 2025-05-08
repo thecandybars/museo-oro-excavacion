@@ -66,7 +66,7 @@ function Model({ model, selectedLayer, onReady }) {
     scene.position.sub(center);
 
     // Position the camera so the model fits nicely in view (centered at origin)
-    camera.position.set(0, 0, distance / 2);
+    camera.position.set(0, 1.4, distance / 2);
     camera.lookAt(0, 0, 0);
     if (onReady) onReady();
   }, [model.url]);

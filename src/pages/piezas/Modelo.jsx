@@ -17,29 +17,29 @@ export default function Modelo() {
   const [zoomLevel, setZoomLevel] = useState(1);
 
   const models = [
-    // {
-    //   id: 1,
-    //   name: "Botijo",
-    //   url: "/models/botijo.glb",
-    //   defaultScale: 0.18,
-    // },
-    // {
-    //   id: 2,
-    //   name: "Botella",
-    //   url: "/models/botella.glb",
-    //   defaultScale: 0.18,
-    // },
-    // {
-    //   id: 3,
-    //   name: "Cepillo",
-    //   url: "/models/cepillo.glb",
-    //   defaultScale: 0.18,
-    // },
+    {
+      id: 1,
+      name: "Botijo",
+      url: "/models/botijo.glb",
+      defaultScale: 0.18,
+    },
+    {
+      id: 2,
+      name: "Botella",
+      url: "/models/botella.glb",
+      defaultScale: 1.18,
+    },
+    {
+      id: 3,
+      name: "Cepillo",
+      url: "/models/cepillo.glb",
+      defaultScale: 2.18,
+    },
     {
       id: 4,
       name: "Embudo",
       url: "/models/embudo.glb",
-      defaultScale: 0.18,
+      defaultScale: 2.18,
     },
     {
       id: 5,
@@ -47,24 +47,54 @@ export default function Modelo() {
       url: "/models/plato.glb",
       defaultScale: 0.18,
     },
-    // {
-    //   id: 6,
-    //   name: "Taza",
-    //   url: "/models/taza.glb",
-    //   defaultScale: 0.18,
-    // },
-    // {
-    //   id: 7,
-    //   name: "Vasinica",
-    //   url: "/models/vasinica.glb",
-    //   defaultScale: 1,
-    // },
-    // {
-    //   id: 8,
-    //   name: "Bacin",
-    //   url: "/models/bacin.glb",
-    //   defaultScale: 0.18,
-    // },
+    {
+      id: 6,
+      name: "Taza",
+      url: "/models/taza-flores.glb",
+      defaultScale: 1.5,
+    },
+    {
+      id: 7,
+      name: "Vasinica",
+      url: "/models/vasinica.glb",
+      defaultScale: 1.5,
+    },
+    {
+      id: 8,
+      name: "Bacin",
+      url: "/models/bacin.glb",
+      defaultScale: 1.1,
+    },
+    {
+      id: 9,
+      name: "Budare",
+      url: "/models/budare.glb",
+      defaultScale: 0.18,
+    },
+    {
+      id: 10,
+      name: "Escudilla",
+      url: "/models/escudilla.glb",
+      defaultScale: 0.18,
+    },
+    {
+      id: 11,
+      name: "Fragmento ceramica indigena",
+      url: "/models/fragmento-ceramica-indigena.glb",
+      defaultScale: 8,
+    },
+    {
+      id: 12,
+      name: "Litico",
+      url: "/models/litico.glb",
+      defaultScale: 6,
+    },
+    {
+      id: 13,
+      name: "Vasija africana",
+      url: "/models/vasija-africana.glb",
+      defaultScale: 0.8,
+    },
   ];
   const [selectedModel, setSelectedModel] = useState(models[0]);
 

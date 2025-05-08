@@ -66,12 +66,9 @@ export default function MarkerTooltip({
         left: positionTooltip.x + "%",
       }}
     >
-      <Paper
-        elevation={4}
-        bgcolor="white"
-        // onClick={onClose}
-      >
+      <Paper elevation={4} bgcolor="white">
         <CloseIcon
+          onClick={onClose}
           sx={{
             position: "absolute",
             top: "5px",
@@ -80,6 +77,7 @@ export default function MarkerTooltip({
             color: "primary.main",
             bgcolor: "white",
             borderRadius: "100%",
+            zIndex: 1000,
           }}
         />
         <Stack alignItems={"center"} gap={1} p={1}>
