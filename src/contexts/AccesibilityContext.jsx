@@ -7,7 +7,6 @@ export const AccesibilityContext = createContext();
 export default function AccesibilityProvider({ children }) {
   const [fontScale, setFontScale] = useState(false);
   const [highContrast, setHighContrast] = useState(false);
-  console.log("🚀 ~ AccesibilityProvider ~ highContrast:", highContrast);
   // useEffect(() => {
   //   const storedFontScale = localStorage.getItem("fontScale");
   //   if (storedFontScale) {

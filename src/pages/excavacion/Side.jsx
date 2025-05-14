@@ -9,7 +9,7 @@ export default function Side() {
 
   return (
     <Stack height={1}>
-      <Typography variant="h1" color="primary">
+      <Typography variant="h2" color="primary">
         {t.sideTitle}
       </Typography>
       <Typography variant="body1">{t.sideParagraph}</Typography>

@@ -7,7 +7,7 @@ const ToolBoxWrapper = ({ children }) => {
       width="min-content"
       sx={{
         position: "absolute",
-        zIndex: 1000,
+        zIndex: 100000000,
         paddingX: 3,
         paddingY: 1,
         top: 0,

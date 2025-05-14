@@ -1,14 +1,15 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/no-unknown-property */
 
-import { useEffect } from "react";
-// import { AccesibilityContext } from '../contexts/AccesibilityContext';
+import { useContext, useEffect } from "react";
+import { AccesibilityContext } from "../contexts/AccesibilityContext";
 import * as THREE from "three";
-import { useGLTF } from "@react-three/drei";
+import { Box, Html, useGLTF } from "@react-three/drei";
 import { useThree } from "@react-three/fiber";
+import Marker3D from "../ui/Marker3D";
 
 export default function Model({ model, selectedLayer }) {
-  // const { highContrast } = useContext(AccesibilityContext);
+  const { highContrast } = useContext(AccesibilityContext);
   const { scene } = useGLTF(model.url);
   const { camera } = useThree();
   // const [selectedMarker, setSelectedMarker] = useState(null);
@@ -46,27 +47,27 @@ export default function Model({ model, selectedLayer }) {
         object={scene}
         scale={[model.defaultScale, model.defaultScale, model.defaultScale]}
       />
-      {/* {model.markers?.map((marker) => (
-          <Html
-            key={marker.id}
-            position={marker.position}
-            distanceFactor={5}
-            style={{ filter: highContrast ? "invert(1)" : "none" }}
+      {model.markers?.map((marker) => (
+        <Html
+          key={marker.id}
+          position={marker.position}
+          distanceFactor={5}
+          style={{ filter: highContrast ? "invert(1)" : "none" }}
+        >
+          <Box
+            id="container"
+            display="flex"
+            flexDirection="column"
+            alignItems="center"
           >
-            <Box
-              id="container"
-              display="flex"
-              flexDirection="column"
-              alignItems="center"
-            >
-              <Marker3D
-                caption={`${marker.id + 1}`}
-                onClick={() => handleOnClick(marker)}
-                onClose={marker.onClose}
-              />
-            </Box>
-          </Html>
-        ))} */}
+            <Marker3D
+              caption={`${marker.id + 1}`}
+              onClick={() => handleOnClick(marker)}
+              onClose={marker.onClose}
+            />
+          </Box>
+        </Html>
+      ))}
     </group>
   );
 }

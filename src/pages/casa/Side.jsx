@@ -13,7 +13,7 @@ export default function Side() {
   // PAGE 0
   const renderPage0 = (
     <>
-      <Typography variant="h1" color="primary">
+      <Typography variant="h2" color="primary">
         {t.sideTitle}
       </Typography>
       <Typography variant="body1">{t.sideParagraph}</Typography>
@@ -27,7 +27,7 @@ export default function Side() {
   const renderPage1 = (
     <Slide direction="right" in={currentPage === 1} mountOnEnter unmountOnExit>
       <Box>
-        <Typography variant="h1" color="primary">
+        <Typography variant="h2" color="primary">
           {t.sideBibliography.title}
         </Typography>
         {renderBooks}

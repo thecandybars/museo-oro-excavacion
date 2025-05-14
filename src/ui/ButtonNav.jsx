@@ -3,7 +3,8 @@ import { Button, Typography } from "@mui/material";
 import { Link } from "react-router";
 import { theme } from "../utils/theme/ThemeProviderWrapper";
 
-export default function ButtonNav({ text, to, onClick, style }) {
+export default function ButtonNav({ text, to, onClick, style, display }) {
+  if (display === false) return null;
   return (
     <Button
       component={Link}

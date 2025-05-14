@@ -3,7 +3,6 @@ import { useContext, useRef, useState } from "react";
 import { TransformComponent, TransformWrapper } from "react-zoom-pan-pinch";
 import { LanguageContext } from "../../contexts/LanguageContext";
 import translations from "../../utils/translations";
-import MarkerTooltip from "../../ui/MarkerTooltip";
 // import TimelineButton from "../../ui/MapToolbox/TimelineButton";
 import ToolBoxWrapper from "../../ui/MapToolbox/ToolboxWrapper";
 import Marker from "../../ui/Marker";
@@ -28,16 +27,29 @@ export default function Mapa() {
   const [selectedMarker, setSelectedMarker] = useState(null);
   const markers = [
     {
-      image: ["/mapa_t1_0.jpeg", "/mapa_t1_1.jpeg", "/mapa_t1_2.jpeg"],
-      position: { x: 38, y: 36 },
-      positionTooltip: { x: 35, y: 20 },
-      path: "/excavacion",
+      id: 0,
+      image: "/mapa_t2.jpeg",
+      position: { x: 44, y: 36 },
+      positionTooltip: { x: 43, y: 20 },
     },
     {
-      image: "/mapa_t2.jpeg",
-      position: { x: 45, y: 36 },
+      id: 1,
+      image: "/mapa_t1_0.jpeg",
+      position: { x: 35.2, y: 36 },
+      positionTooltip: { x: 35, y: 20 },
+    },
+    {
+      id: 2,
+      image: "/mapa_t1_1.jpeg",
+      position: { x: 37.5, y: 35.5 },
+      positionTooltip: { x: 35, y: 20 },
+    },
+    {
+      id: 3,
+      image: "/mapa_t1_2.jpeg",
+      position: { x: 40, y: 33 },
       positionTooltip: { x: 43, y: 20 },
-      path: "/",
+      path: "/excavacion",
     },
   ];
   const markersWithTexts = markers.map((marker, i) => ({
@@ -45,12 +57,13 @@ export default function Mapa() {
     ...t.markers[i], // Markers texts
   }));
 
-  const renderTooltips = markersWithTexts.map((marker) => (
+  const renderMarkers = markersWithTexts.map((marker) => (
     <Marker
-      key={marker.caption}
+      key={marker.id}
+      isOpen={selectedMarker === marker.id}
       marker={marker}
-      onClick={(markerCaption) => handleMarkerClick(markerCaption)}
-      // style={{ filter: highContrast ? "invert(1)" : "none" }}
+      onClick={() => handleMarkerClick(marker.id)}
+      onClose={() => setSelectedMarker(null)}
     />
   ));
 
@@ -59,26 +72,11 @@ export default function Mapa() {
     else setSelectedMarker(markerCaption);
   };
 
-  // Marker tooltip
-  const tooltipData =
-    selectedMarker &&
-    markersWithTexts.find(
-      (marker) => Number(marker.caption) === selectedMarker
-    );
-  const renderTooltipInfo = !!selectedMarker && (
-    <MarkerTooltip
-      positionTooltip={tooltipData.positionTooltip}
-      image={tooltipData.image}
-      title={tooltipData.title}
-      description={tooltipData.description}
-      path={tooltipData.path}
-      button={tooltipData.button}
-      onClose={() => setSelectedMarker(null)}
-    />
-  );
-
   return (
     <Box
+      // onClick={() => {
+      //   selectedMarker !== null && setSelectedMarker(null);
+      // }}
       sx={{
         cursor: isPanning ? "grabbing" : "grab",
       }}
@@ -86,27 +84,31 @@ export default function Mapa() {
       {/* MAP */}
       <TransformWrapper
         ref={wrapperRef}
+        centerZoomedOut={true}
         initialScale={1.7}
         centerOnInit={true}
-        wheel={{ disabled: true }}
+        wheel={{ disabled: false }}
         doubleClick={{ disabled: true }}
-        pinch={{ disabled: true }}
-        zoomAnimation={{ disabled: true }}
+        pinch={{ disabled: false }}
+        zoomAnimation={{ disabled: false }}
         panning={{ velocityDisabled: false }}
         onPanningStart={() => setIsPanning(true)}
         onPanningStop={() => setIsPanning(false)}
       >
         <TransformComponent>
-          {renderTooltips}
-          {renderTooltipInfo}
-          <img
-            src={`/${mapas[map / 10]}`}
-            width="100%"
-            style={{
-              zIndex: -1,
-              filter: highContrast ? "invert(100%)" : "none",
-            }}
-          />
+          <Box sx={{ position: "relative", width: "100%" }}>
+            {renderMarkers}
+            <img
+              src={`/${mapas[map / 10]}`}
+              width="100%"
+              style={{
+                width: "100%",
+                display: "block",
+                zIndex: -1,
+                filter: highContrast ? "invert(100%)" : "none",
+              }}
+            />
+          </Box>
         </TransformComponent>
       </TransformWrapper>
 

@@ -1,11 +1,18 @@
 /* eslint-disable react/no-unknown-property */
 /* eslint-disable react/prop-types */
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Canvas, useThree } from "@react-three/fiber";
-import { OrbitControls, useGLTF } from "@react-three/drei";
-// import Marker3D from "../ui/Marker3D";
+import {
+  OrbitControls,
+  useGLTF,
+  Text,
+  Billboard,
+  Html,
+} from "@react-three/drei";
 import { AccesibilityContext } from "../contexts/AccesibilityContext";
 import * as THREE from "three";
+import { theme } from "../utils/theme/ThemeProviderWrapper";
+import MarkerTooltip from "../ui/MarkerTooltip";
 
 export default function GLBViewer({
   model,
@@ -15,6 +22,7 @@ export default function GLBViewer({
   selectedLayer = "both",
   onReady,
 }) {
+  console.log("🚀 ~ model:", model);
   const { highContrast } = useContext(AccesibilityContext);
 
   return (
@@ -31,22 +39,60 @@ export default function GLBViewer({
         key={model.url}
         onReady={onReady}
       />
-      <OrbitControls
-        autoRotate={rotateModel}
-        autoRotateSpeed={2}
-        // onChange={(event) => {
-        //   const { x, y, z } = event.target.object.position;
-        //   console.log(`Camera Position: x=${x}, y=${y}, z=${z}`);
-        // }}
-      />
+      <OrbitControls autoRotate={rotateModel} autoRotateSpeed={2} />
     </Canvas>
+  );
+}
+
+function Marker3D({ position, text, onClick, highContrast, scale }) {
+  const [hovered, setHovered] = useState(false);
+
+  // Offset the marker slightly from the model surface
+  const markerPosition = position.map((coord) => coord * 1.05);
+
+  return (
+    <group position={markerPosition} scale={[scale, scale, scale]}>
+      {/* Billboard ensures the marker always faces the camera */}
+      <Billboard>
+        {/* Circle background */}
+        <mesh
+          onClick={onClick}
+          onPointerOver={() => setHovered(true)}
+          onPointerOut={() => setHovered(false)}
+        >
+          <circleGeometry args={[0.15, 32]} />
+          <meshBasicMaterial
+            color={
+              hovered
+                ? theme.palette.primary.light
+                : highContrast
+                ? "#ffffff"
+                : theme.palette.primary.main
+            }
+            side={THREE.DoubleSide}
+          />
+        </mesh>
+
+        {/* Text */}
+        <Text
+          position={[0, 0, 0.01]} // Slightly in front of the circle
+          fontSize={0.2}
+          color={highContrast ? "#000000" : "#ffffff"}
+          anchorX="center"
+          anchorY="middle"
+        >
+          {text}
+        </Text>
+      </Billboard>
+    </group>
   );
 }
 
 function Model({ model, selectedLayer, onReady }) {
   const { scene } = useGLTF(model.url);
   const { camera } = useThree();
-  // const [selectedMarker, setSelectedMarker] = useState(null);
+  const [selectedMarker, setSelectedMarker] = useState(null);
+  const { highContrast, fontScale } = useContext(AccesibilityContext);
 
   if (scene.children.length > 1 && selectedLayer) {
     scene.children[0].visible = selectedLayer !== "first";
@@ -69,40 +115,72 @@ function Model({ model, selectedLayer, onReady }) {
     camera.position.set(0, 1.4, distance / 2);
     camera.lookAt(0, 0, 0);
     if (onReady) onReady();
-  }, [model.url]);
+  }, [model.url, selectedLayer]);
 
-  // const handleOnClick = (marker) => {
-  //   marker.onClick();
-  //   setSelectedMarker(marker.id);
-  // };
+  const selectedMarkerData = model.markers.find(
+    (marker) => marker.id === selectedMarker
+  );
 
   return (
     <group>
-      <primitive
-        object={scene}
-        scale={[model.defaultScale, model.defaultScale, model.defaultScale]}
-      />
-      {/* {model.markers?.map((marker) => (
-        <Html
+      <primitive object={scene} scale={[1, 1, 1]} />
+      {model.markers?.map((marker) => (
+        <Marker3D
           key={marker.id}
           position={marker.position}
-          distanceFactor={5}
-          style={{ filter: highContrast ? "invert(1)" : "none" }}
-        >
-          <Box
-            id="container"
-            display="flex"
-            flexDirection="column"
-            alignItems="center"
-          >
-            <Marker3D
-              caption={`${marker.id + 1}`}
-              onClick={() => handleOnClick(marker)}
-              onClose={marker.onClose}
-            />
-          </Box>
-        </Html>
-      ))} */}
+          text={marker.id}
+          onClick={() => setSelectedMarker(marker.id)}
+          highContrast={highContrast}
+          scale={model.markerScale}
+        />
+      ))}
+
+      <Html
+        key={selectedMarkerData?.id}
+        position={[
+          selectedMarkerData?.position[0],
+          selectedMarkerData?.position[1] * 0.8,
+          selectedMarkerData?.position[2],
+        ]}
+        style={{
+          filter: highContrast ? "invert(1)" : "none",
+          position: "relative",
+          display: selectedMarker ? "block" : "none",
+        }}
+      >
+        <MarkerTooltip
+          image={selectedMarkerData?.image}
+          title={selectedMarkerData?.title}
+          description={selectedMarkerData?.description}
+          onClose={() => setSelectedMarker(null)}
+          // Context passed as props cause Html element creates a separete React
+          highContrastProp={highContrast}
+          fontScaleProp={fontScale}
+          // AI says : The <Html> component from @react-three/drei creates a portal to render HTML content outside the normal React Three Fiber component tree. This creates a disconnect in the React context chain, so components inside the Html portal can't access contexts from the parent tree.
+        />
+      </Html>
+
+      {/* <Html
+        key={"marker.id"}
+        position={[2, 4.5, 2]}
+        style={{
+          filter: highContrast ? "invert(1)" : "none",
+          position: "relative",
+        }}
+      >
+        <MarkerTooltip
+          image="../../public/mapa01.jpg"
+          title="Hola"
+          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
+          // path={marker.path}
+          // button={marker.button}
+          onClose={() => console.log("close")}
+          // Context passed as props cause Html element creates a separete React
+          highContrastProp={highContrast}
+          fontScaleProp={fontScale}
+          // AI says : The <Html> component from @react-three/drei creates a portal to render HTML content outside the normal React Three Fiber component tree. This creates a disconnect in the React context chain, so components inside the Html portal can't access contexts from the parent tree.
+        />
+      </Html> */}
     </group>
   );
 }

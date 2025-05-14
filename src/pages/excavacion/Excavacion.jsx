@@ -13,9 +13,13 @@ import { useNavigate } from "react-router";
 import { theme } from "../../utils/theme/ThemeProviderWrapper";
 import { LanguageContext } from "../../contexts/LanguageContext";
 import translations from "../../utils/translations";
+import { AccesibilityContext } from "../../contexts/AccesibilityContext";
 // import { AccesibilityContext } from "../../contexts/AccesibilityContext";
 
 export default function Excavacion() {
+  const context = useContext(AccesibilityContext);
+  console.log("🚀 ~ context:", context);
+
   // const [selectedMarker, setSelectedMarker] = useState(null);
   // const [markerPosition, setMarkerPosition] = useState(null);
   const navigate = useNavigate();

@@ -3,13 +3,14 @@ const translations = {
     header: {
       btnHome: "Inicio",
       btnBack: "Volver",
+      btnNext: "Siguiente",
       settings: {
         menuFont: "Texto Grande",
         menuContrast: "Alto Contraste",
       },
     },
     inicio: {
-      titulo: "Seretos de una casa cartagenera",
+      titulo: "Secretos de una casa cartagenera",
       indice: [
         "La ciudad colonial",
         // "La casa colonial",
@@ -21,7 +22,7 @@ const translations = {
     map: {
       sideTitle: "La ciudad colonial",
       sideParagraph:
-        "Explora los puntos de interés arqueológico en este mapa detallado de Cartagena. Haz clic en los marcadores para obtener más información sobre cada ubicación.",
+        "Cartagena fue construida en territorios de indígenas malibúes asentados en la bahía. En 1533 Pedro de Heredia fundó la ciudad puerto en este lugar, a pesar de la escasez de agua para el consumo y por las ventajas que brindaba el lugar para la llegada de las embarcaciones y la defensa de la ciudad.\nExisten muchos planos de la ciudad que permiten conocer sus transformaciones a lo largo de los siglos. Este plano muestra a Cartagena y su entorno en 1586, cuando es sitiada y saqueada por el corsario Francis Drake. Explora con la lupa las manzanas y las casas.",
       sideBibliography: {
         title: "Bibliografia",
         books: [
@@ -46,16 +47,30 @@ const translations = {
       },
       markers: [
         {
+          id: 0,
           caption: "1",
-          title: "Plaza Mayor",
-          description: "Centro Histórico de Cartagena",
-          button: "Visitar Casa Colonial",
-        },
-        {
-          caption: "2",
           title: "Plaza Real",
           description: "Importante sitio histórico y religioso",
           button: "",
+        },
+        {
+          id: 1,
+          caption: "2",
+          title: "Nuevo 1",
+          description: "Centro Histórico de Cartagena",
+        },
+        {
+          id: 2,
+          caption: "3",
+          title: "Plaza Mayor",
+          description: "Centro Histórico de Cartagena",
+        },
+        {
+          id: 3,
+          caption: "4",
+          title: "Nuevo 2",
+          description: "Centro Histórico de Cartagena",
+          button: "Visitar Casa Colonial",
         },
       ],
     },
@@ -124,12 +139,56 @@ const translations = {
       sideTitle: "Los objetos",
       sideParagraph:
         "Explora esta pieza arqueológica en detalle utilizando las herramientas disponibles.",
+      modelos: [
+        {
+          id: 1,
+          title: "Botija",
+          sideTitle: "Botija para vino y aceite",
+          sideParagraph:
+            "Un recipiente popular para contener líquidos en la América colonial fue la botija producida en España.\nVenían en los barcos llenas con vino o aceite de oliva y ayudaban a darle peso a la embarcación. Una vez consumidos estos líquidos, se usaban para guardar el agua para beber u otras bebidas fermentadas.",
+
+          markers: [
+            {
+              id: 1,
+              description: "Baño de cal superficial precocción",
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: "Botella",
+          sideTitle: "Botella para jarabe",
+          sideParagraph:
+            "Varias de las botellas excavadas sirvieron de envase para medicamentos, algunos de producción local, como los de la Farmacia Román, situada en cercanías de la casa del Museo del Oro Zenú, y otros importados de Estados Unidos y Europa.\nEsta botella contenía un jarabe que calmaba el dolor del brote de dientes de niños y niñas. Aunque este fármaco se produjo desde el siglo XIX, solo hasta el siglo XX se descubrió que uno de sus contenidos, la morfina, era letal para los infantes.",
+          markers: [
+            {
+              id: 1,
+              title: "CURTIS & PERKINS PROPRIETORS",
+              description:
+                "Comercializadores del medicamento. Curtis es el yerno de la señora Winslow y Perkins, su socio. ",
+            },
+            {
+              id: 2,
+              title: "Mrs. WINSLOW'S SYRUP",
+              description:
+                "El nombre del medicamento se toma de la médica Charlotte N. Winslow, suegra de Curtis. Al asociarse a una mujer le daba un aire de confianza maternal al jarabe.",
+            },
+            {
+              id: 3,
+              title: "THE ANGLO AMERICAN DRUG CO SUCCESSORS",
+              description: "Nombre de la compañía farmacéutica",
+            },
+          ],
+        },
+      ],
     },
   },
   en: {
     header: {
       btnHome: "Home",
       btnBack: "Back",
+      btnNext: "Next",
+
       settings: {
         menuFont: "Larger Font",
         menuContrast: "Higher Contrast",
@@ -173,16 +232,30 @@ const translations = {
       },
       markers: [
         {
+          id: 0,
           caption: "1",
-          title: "Plaza Mayor",
-          description: "Cartagena's historic downtown",
-          button: "Visit Colonial House",
-        },
-        {
-          caption: "2",
           title: "Plaza Real",
           description: "Important historical and religious site",
           button: "",
+        },
+        {
+          id: 1,
+          caption: "2",
+          title: "New1",
+          description: "Cartagena's historic downtown",
+        },
+        {
+          id: 2,
+          caption: "3",
+          title: "Plaza Mayor",
+          description: "Cartagena's historic downtown",
+        },
+        {
+          id: 3,
+          caption: "4",
+          title: "New 2",
+          description: "Cartagena's historic downtown",
+          button: "Visit Colonial House",
         },
       ],
     },

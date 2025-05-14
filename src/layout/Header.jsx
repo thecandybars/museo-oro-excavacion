@@ -9,21 +9,23 @@ import {
   Typography,
 } from "@mui/material";
 import { useContext, useRef, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router";
+import { Link, useLocation } from "react-router";
 import ButtonNav from "../ui/ButtonNav";
-import { LanguageContext } from "../contexts/LanguageContext";
 import translations from "../utils/translations";
 import { SettingsIcon, TextIncreaseIcon, VisibilityIcon } from "../utils/icons";
 import { theme } from "../utils/theme/ThemeProviderWrapper";
+import { LanguageContext } from "../contexts/LanguageContext";
 import { AccesibilityContext } from "../contexts/AccesibilityContext";
 
 export default function Header() {
   // Navigate and routes
-  const navigate = useNavigate();
   const path = useLocation();
   // Language and texts
   const { lang } = useContext(LanguageContext);
   const t = translations[lang].header;
+
+  const ordenPaginas = ["/", "/indice", "/mapa", "/excavacion", "/piezas"];
+
   return (
     <Box
       component="nav"
@@ -32,6 +34,7 @@ export default function Header() {
         alignItems: "center",
         gap: 2,
         boxShadow: "0 8px 8px -8px rgba(0, 0, 0, 0.1)",
+        zIndex: 999999999999999,
       }}
     >
       <Box sx={{ width: "25%" }}>
@@ -39,7 +42,7 @@ export default function Header() {
           <img
             src="/logo-museo-del-oro.png"
             alt="Logo Museo del Oro"
-            width={162}
+            width={220}
           />
         </Link>
       </Box>
@@ -52,9 +55,31 @@ export default function Header() {
         }}
       >
         <Box display="flex" gap={2}>
-          {path?.pathname !== "/" && <ButtonNav text={t.btnHome} to="/" />}
           {path?.pathname !== "/" && (
-            <ButtonNav text={t.btnBack} onClick={() => navigate(-1)} />
+            <>
+              <ButtonNav text={t.btnHome} to="/" />
+
+              <ButtonNav
+                display={
+                  !!ordenPaginas[ordenPaginas.indexOf(path.pathname) - 1]
+                }
+                text={"◀"}
+                to={
+                  ordenPaginas[ordenPaginas.indexOf(path.pathname) - 1] || "/"
+                }
+              />
+
+              <ButtonNav
+                display={
+                  !!ordenPaginas[ordenPaginas.indexOf(path.pathname) + 1]
+                }
+                text={"▶"}
+                // text={t.btnNext}
+                to={
+                  ordenPaginas[ordenPaginas.indexOf(path.pathname) + 1] || "/"
+                }
+              />
+            </>
           )}
         </Box>
         <Box display="flex" gap={2}>

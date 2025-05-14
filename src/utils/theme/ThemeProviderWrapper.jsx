@@ -7,8 +7,10 @@ import { AccesibilityContext } from "../../contexts/AccesibilityContext";
 export const theme = {
   palette: {
     primary: {
+      dark: "#6e5200",
       main: "#a67c00",
       light: "#d3af44",
+      translucid: "#caab4f5f",
     },
     secondary: {
       main: "#005f6a",
@@ -36,7 +38,7 @@ export default function ThemeProviderWrapper({ children }) {
           },
           h1: {
             fontWeight: 700,
-            fontSize: `${1.8 * fontScaler}rem`,
+            fontSize: `${3 * fontScaler}rem`,
             marginBottom: "1rem",
           },
           h2: {
