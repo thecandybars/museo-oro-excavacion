@@ -31,7 +31,7 @@ export default function Modelo() {
         {
           id: 1,
           position: [1.7, 5, 1.7],
-          image: "/public/microscopio/1.jpg",
+          image: "/microscopio/1.jpg",
         },
       ],
     },
