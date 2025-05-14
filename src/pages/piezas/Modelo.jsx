@@ -38,7 +38,7 @@ export default function Modelo() {
     {
       id: 2,
       url: "/models/botella.glb",
-      markerScale: 1,
+      markerScale: 0.8,
       markers: [
         {
           id: 1,
@@ -54,42 +54,84 @@ export default function Modelo() {
         },
       ],
     },
-    // {
-    //   id: 3,
-    //   name: "Cepillo",
-    //   url: "/models/cepillo.glb",
-    //   markerScale: 2.18,
-    // },
-    // {
-    //   id: 4,
-    //   name: "Embudo",
-    //   url: "/models/embudo.glb",
-    //   markerScale: 2.18,
-    // },
-    // {
-    //   id: 5,
-    //   name: "Plato",
-    //   url: "/models/plato.glb",
-    //   markerScale: 0.18,
-    // },
-    // {
-    //   id: 6,
-    //   name: "Taza",
-    //   url: "/models/taza-flores.glb",
-    //   markerScale: 1.5,
-    // },
-    // {
-    //   id: 7,
-    //   name: "Vasinica",
-    //   url: "/models/vasinica.glb",
-    //   markerScale: 1.5,
-    // },
-    // {
-    //   id: 8,
-    //   name: "Bacin",
-    //   url: "/models/bacin.glb",
-    //   markerScale: 1.1,
-    // },
+    {
+      id: 3,
+      url: "/models/cepillo.glb",
+      markerScale: 1,
+      markers: [
+        {
+          id: 1,
+          position: [-2, 0.3, 0.3],
+        },
+      ],
+    },
+    {
+      id: 4,
+      url: "/models/embudo.glb",
+      markerScale: 0.7,
+      markers: [
+        {
+          id: 1,
+          position: [-0.3, 0.6, -0.5],
+        },
+      ],
+    },
+    {
+      id: 5,
+      url: "/models/plato.glb",
+      markerScale: 10,
+      markers: [
+        {
+          id: 1,
+          image: "/microscopio/11.jpg",
+          position: [0, 2, -23],
+        },
+        {
+          id: 2,
+          image: "/microscopio/12.jpg",
+          position: [0, 1.5, -16],
+        },
+      ],
+    },
+    {
+      id: 6,
+      url: "/models/taza-flores.glb",
+      markerScale: 1.6,
+      markers: [
+        {
+          id: 1,
+          position: [1, 0, -2],
+        },
+      ],
+    },
+    {
+      id: 7,
+      url: "/models/vasinica.glb",
+      markerScale: 0.5,
+      markers: [
+        {
+          id: 1,
+          position: [0, -0.4, 0],
+        },
+      ],
+    },
+    {
+      id: 8,
+      url: "/models/bacin.glb",
+      markerScale: 2,
+      markers: [
+        {
+          id: 1,
+          position: [2.5, -0.4, 0],
+        },
+        {
+          id: 2,
+          image: "/microscopio/10.jpg",
+
+          position: [2.5, 0.4, -1],
+        },
+      ],
+    },
     // {
     //   id: 9,
     //   name: "Budare",
@@ -130,7 +172,7 @@ export default function Modelo() {
     })),
   }));
 
-  const [selectedModel, setSelectedModel] = useState(modelsWithText[1]);
+  const [selectedModel, setSelectedModel] = useState(modelsWithText[7]);
 
   const zoomStep = 1.1;
   const onZoomOut = () => {

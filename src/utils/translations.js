@@ -180,6 +180,95 @@ const translations = {
             },
           ],
         },
+        {
+          id: 3,
+          title: "Cepillo",
+          sideTitle: "Cepillo de dientes en hueso",
+          sideParagraph:
+            "Los cepillos de dientes de hueso y pelo animal se usaron en Europa desde el siglo XVII, cuando era considerado un objeto de lujo, hasta entrado el siglo XX.\nLos mayores productores de estos cepillos fueron Inglaterra, Alemania, Francia y Japón. Su producción solo se masificó con la invención de la máquina perforadora en 1870.",
+          markers: [
+            {
+              id: 1,
+              description:
+                "Estandarización del tamaño de los orificios como indicador de elaboración industrial",
+            },
+          ],
+        },
+        {
+          id: 4,
+          title: "Embudo",
+          sideTitle: "Embudo inglés del siglo XIX",
+          sideParagraph:
+            "El diseño azul de este fragmento de embudo fue inicialmente grabado en una plancha de cobre por un artesano. Luego se imprimió en una tinta azul con óxido de cobalto, sobre un papel de seda que se adhirió encima del bizcocho (primera cocción de la loza) recubierto con una capa de esmalte blanco. Para darle el vidriado brillante se le aplicó un esmalte transparente y se quemó de nuevo. En este proceso, el diseño se transfería a la pieza.",
+          markers: [
+            {
+              id: 1,
+              description: "Unión del diseño impreso en el papel",
+            },
+          ],
+        },
+        {
+          id: 5,
+          title: "Plato",
+          sideTitle: "Plato pando sevillano",
+          sideParagraph:
+            "Este plato del tipo azul sobre azul fue producido en Sevilla, en el barrio de Triana, entre 1550 y 1630. La loza de este tipo buscó imitar tanto la cerámica italiana, como la porcelana china.\nPudo haber sido parte del menaje de la familia Matute, quienes pretendían preservar en América las prácticas de mesa y los gustos hispanos a la hora de consumir sus alimentos.",
+          markers: [
+            {
+              id: 1,
+              description: "Vidriado opaco en dos tonos de azul",
+            },
+            {
+              id: 2,
+              description:
+                "Pasta original quemada antes de aplicar el esmalte (bizcocho)",
+            },
+          ],
+        },
+        {
+          id: 6,
+          title: "Tazón",
+          sideTitle: "Tazón inglés con diseño floral",
+          sideParagraph:
+            "Los fragmentos de loza industrial encontrados en la casa no solo cuentan sobre los gustos de los miembros del hogar. También revelan las técnicas de producción de diferentes lugares y épocas en Europa, donde los ingleses eran los mayores productores y exportadores, y en menor proporción los franceses, alemanes y españoles.\nEste es un tazón de loza inglesa pintada a mano del siglo XIX.",
+          markers: [
+            {
+              id: 1,
+              description: "Diseños florales pintados a mano",
+            },
+          ],
+        },
+        {
+          id: 7,
+          title: "Basinica",
+          sideTitle: "Bacinica inglesa",
+          sideParagraph:
+            "Esta bacinica decorada con la técnica de transferencia muestra un motivo elaborado tal vez por el artista inglés W.H. Bartlett (1809-1854). Son reconocidos sus grabados en acero de paisajes idealizados de la Gran Bretaña, Estados Unidos, Canadá y el Cercano Oriente. Según la decoración y el color, la bacinica fue elaborada a mediados del siglo XIX, en Inglaterra. ",
+          markers: [
+            {
+              id: 1,
+              description:
+                "Para distinguirse, cada fábrica de loza diseñó una o varias marcas, que se imprimían en la base del objeto.",
+            },
+          ],
+        },
+        {
+          id: 8,
+          title: "Basin",
+          sideTitle: "Bacinica inglesa",
+          sideParagraph:
+            "La idea de higiene durante buena parte del periodo colonial fue distinta a la actual. La orina y heces se depositaban en los bacines, que se mantenían bajo las camas o acomodados en una silla inodoro.\nCuando estos desechos no se vertían en la huerta, en el albañal o en la letrina, eran botados a la calle. Sin lluvias, esta práctica contribuía al ambiente malsano de Cartagena de Indias.",
+          markers: [
+            {
+              id: 1,
+              description: "Superficie vidriada",
+            },
+            {
+              id: 2,
+              description: "Pasta cerámica",
+            },
+          ],
+        },
       ],
     },
   },
