@@ -199,7 +199,7 @@ const translations = {
           title: "Embudo",
           sideTitle: "Embudo inglés del siglo XIX",
           sideParagraph:
-            "El diseño azul de este fragmento de embudo fue inicialmente grabado en una plancha de cobre por un artesano. Luego se imprimió en una tinta azul con óxido de cobalto, sobre un papel de seda que se adhirió encima del bizcocho (primera cocción de la loza) recubierto con una capa de esmalte blanco. Para darle el vidriado brillante se le aplicó un esmalte transparente y se quemó de nuevo. En este proceso, el diseño se transfería a la pieza.",
+            "El diseño azul de este fragmento de embudo fue inicialmente grabado en una plancha de cobre por un artesano. Luego se imprimió en una tinta azul con óxido de cobalto, sobre un papel de seda que se adhirió encima del bizcocho (primera cocción de la loza) recubierto con una capa de esmalte blanco.\nPara darle el vidriado brillante se le aplicó un esmalte transparente y se quemó de nuevo. En este proceso, el diseño se transfería a la pieza.",
           markers: [
             {
               id: 1,
@@ -230,7 +230,7 @@ const translations = {
           title: "Tazón",
           sideTitle: "Tazón inglés con diseño floral",
           sideParagraph:
-            "Los fragmentos de loza industrial encontrados en la casa no solo cuentan sobre los gustos de los miembros del hogar. También revelan las técnicas de producción de diferentes lugares y épocas en Europa, donde los ingleses eran los mayores productores y exportadores, y en menor proporción los franceses, alemanes y españoles.\nEste es un tazón de loza inglesa pintada a mano del siglo XIX.",
+            "Los fragmentos de loza industrial encontrados en la casa no solo cuentan sobre los gustos de los miembros del hogar.\nTambién revelan las técnicas de producción de diferentes lugares y épocas en Europa, donde los ingleses eran los mayores productores y exportadores, y en menor proporción los franceses, alemanes y españoles.\nEste es un tazón de loza inglesa pintada a mano del siglo XIX.",
           markers: [
             {
               id: 1,
@@ -243,7 +243,7 @@ const translations = {
           title: "Basinica",
           sideTitle: "Bacinica inglesa",
           sideParagraph:
-            "Esta bacinica decorada con la técnica de transferencia muestra un motivo elaborado tal vez por el artista inglés W.H. Bartlett (1809-1854). Son reconocidos sus grabados en acero de paisajes idealizados de la Gran Bretaña, Estados Unidos, Canadá y el Cercano Oriente. Según la decoración y el color, la bacinica fue elaborada a mediados del siglo XIX, en Inglaterra. ",
+            "Esta bacinica decorada con la técnica de transferencia muestra un motivo elaborado tal vez por el artista inglés W.H. Bartlett (1809-1854).\nSon reconocidos sus grabados en acero de paisajes idealizados de la Gran Bretaña, Estados Unidos, Canadá y el Cercano Oriente. Según la decoración y el color, la bacinica fue elaborada a mediados del siglo XIX, en Inglaterra. ",
           markers: [
             {
               id: 1,
@@ -266,6 +266,108 @@ const translations = {
             {
               id: 2,
               description: "Pasta cerámica",
+            },
+          ],
+        },
+        {
+          id: 9,
+          title: "Budare",
+          sideTitle: "Fragmento de budare",
+          sideParagraph:
+            "La yuca, planta de origen americano, fue usada desde tiempos prehispánicos para la preparación de casabe o tortillas. Para hacer la masa se rallaba la yuca y se exprimía.\nLuego se extendía y tostaba sobre el budare caliente. Sobre este también se asaban tortillas de maíz y tostaban semillas. Los españoles incorporaron pronto estos alimentos a su dieta y estos utensilios.",
+          markers: [
+            {
+              id: 1,
+              description:
+                "La capa de hollín indica que el budare fue puesto al fuego",
+            },
+            {
+              id: 2,
+              description:
+                "Vitrificación del contenido de silicio por acción del calor",
+            },
+            {
+              id: 3,
+              description: "Veta de corrosión de mineral rico en hierro",
+            },
+            {
+              id: 4,
+              description:
+                "Concreciones de sales formadas por la reacción con el suelo",
+            },
+          ],
+        },
+        {
+          id: 10,
+          title: "Escudilla",
+          sideTitle: "Escudilla española",
+          sideParagraph:
+            "Las escudillas se usaban para servir sopas, caldos o potajes que se tomaban con cuchara o sorbidos. Esta es del tipo conocido como Columbia liso, una mayólica española producida entre 1490 y 1550.\nSu superficie vidriada brillante se obtenía con el uso del plomo triturado y el color blanco, con el estaño. Esta última técnica fue introducida en España por los árabes.",
+          markers: [
+            {
+              id: 1,
+              description:
+                "Vidriado externo erosionado por el contacto con el suelo donde estuvo enterrada la escudilla",
+            },
+            {
+              id: 2,
+              description:
+                "El vidriado en la superficie interior es más grueso y se preservó mejor",
+            },
+          ],
+        },
+        {
+          id: 11,
+          title: "Fragmento de cerámica indígena",
+          sideTitle: "Fragmento de cerámica indígena tipo Crespo",
+          sideParagraph:
+            "La decoración, el color y el material de este fragmento permiten asociarlo al tipo cerámico Crespo definido por la arqueóloga Alicia Dussán.\nEsta alfarería indígena se ha encontrado en contextos datados desde tiempos prehispánicos hasta entrado el siglo XIX, como testimonio de la continuidad de las tradiciones cerámicas locales después de la invasión española.",
+          markers: [
+            {
+              id: 1,
+              description: "Decoración incisa en forma de V y puntos",
+            },
+            {
+              id: 2,
+              description:
+                "Estas inclusiones de arena que se encuentran en la pasta fueron el desgrasante usado para darle cuerpo a la arcilla",
+            },
+          ],
+        },
+        {
+          id: 12,
+          title: "Raspador",
+          sideTitle: "Raspador de piedra",
+          sideParagraph:
+            "Los indígenas usaron la piedra para elaborar una gran diversidad de herramientas.\nRecurrieron a rocas muy duras, principalmente chert, cuya forma redondeada y estructura facilitaba la elaboración de objetos cortantes como esta raedera empleada para desprender el cuero de los animales.",
+          markers: [
+            {
+              id: 1,
+              description:
+                "La transparencia es una característica propia de rocas ricas en sílice como el chert ",
+            },
+            {
+              id: 2,
+              description:
+                "El filo cortante fue obtenido por la técnica de presión aplicada en ambos lados",
+            },
+          ],
+        },
+        {
+          id: 13,
+          title: "Olla",
+          sideTitle: "Olla de cocina elaborada por alfareros africanos",
+          sideParagraph:
+            "Parte de las vasijas usadas en las cocinas de la Cartagena colonial fueron elaboradas por personas africanas esclavizadas y “negros libres”.\nEllos abastecieron la continua y creciente demanda de estos utensilios en la ciudad y aportaron con sus tradiciones a las técnicas, formas y decoraciones.",
+          markers: [
+            {
+              id: 1,
+              description:
+                "Decoración ungulada, es decir, hecha con impresiones de los dedos, típica de la tradición alfarera africana",
+            },
+            {
+              id: 2,
+              description: "Residuos de los alimentos preparados",
             },
           ],
         },

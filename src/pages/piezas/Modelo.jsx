@@ -132,36 +132,100 @@ export default function Modelo() {
         },
       ],
     },
-    // {
-    //   id: 9,
-    //   name: "Budare",
-    //   url: "/models/budare.glb",
-    //   markerScale: 0.18,
-    // },
-    // {
-    //   id: 10,
-    //   name: "Escudilla",
-    //   url: "/models/escudilla.glb",
-    //   markerScale: 0.18,
-    // },
-    // {
-    //   id: 11,
-    //   name: "Fragmento ceramica indigena",
-    //   url: "/models/fragmento-ceramica-indigena.glb",
-    //   markerScale: 8,
-    // },
-    // {
-    //   id: 12,
-    //   name: "Litico",
-    //   url: "/models/litico.glb",
-    //   markerScale: 6,
-    // },
-    // {
-    //   id: 13,
-    //   name: "Vasija africana",
-    //   url: "/models/vasija-africana.glb",
-    //   markerScale: 0.8,
-    // },
+    {
+      id: 9,
+      url: "/models/budare.glb",
+      markerScale: 2,
+      markers: [
+        {
+          id: 1,
+          position: [-1, -0.5, -8],
+          image: "/microscopio/1.jpg",
+        },
+        {
+          id: 2,
+          image: "/microscopio/2.jpg",
+          position: [0, -0.5, -9],
+        },
+        {
+          id: 3,
+          image: "/microscopio/3.jpg",
+          position: [-2.3, -0.5, -9],
+        },
+        {
+          id: 4,
+          image: "/microscopio/4.jpg",
+          position: [-1, -0.5, -9.3],
+        },
+      ],
+    },
+    {
+      id: 10,
+      url: "/models/escudilla.glb",
+      markerScale: 4,
+      markers: [
+        {
+          id: 1,
+          position: [2.2, -3, -2.2],
+          image: "/microscopio/8.jpg",
+        },
+        {
+          id: 2,
+          position: [0, -1, 0],
+          image: "/microscopio/9.jpg",
+        },
+      ],
+    },
+    {
+      id: 11,
+      url: "/models/fragmento-ceramica-indigena.glb",
+      markerScale: 0.1,
+      markers: [
+        {
+          id: 1,
+          position: [0.05, 0.05, -0.05],
+        },
+        {
+          id: 2,
+          position: [0.05, 0.03, 0.05],
+          image: "/microscopio/5.jpg",
+        },
+      ],
+    },
+    {
+      id: 12,
+      url: "/models/litico.glb",
+      markerScale: 1,
+      markers: [
+        {
+          id: 1,
+          position: [0, 0.5, 0],
+          image: "/microscopio/6.jpg",
+        },
+        {
+          id: 2,
+          position: [0, 0.5, -2],
+          image: "/microscopio/7.jpg",
+        },
+      ],
+    },
+    {
+      id: 13,
+      url: "/models/vasija-africana.glb",
+      markerScale: 3,
+      markers: [
+        {
+          id: 1,
+          position: [0, 2.2, -4],
+          image: "/microscopio/6.jpg",
+        },
+        {
+          id: 2,
+          position: [0, 2, -2],
+          image: "/microscopio/7.jpg",
+        },
+      ],
+    },
   ];
   const modelsWithText = models.map((model, indexModel) => ({
     ...model,
@@ -172,7 +236,7 @@ export default function Modelo() {
     })),
   }));
 
-  const [selectedModel, setSelectedModel] = useState(modelsWithText[7]);
+  const [selectedModel, setSelectedModel] = useState(modelsWithText[12]);
 
   const zoomStep = 1.1;
   const onZoomOut = () => {
