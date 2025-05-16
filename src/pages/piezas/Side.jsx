@@ -9,7 +9,7 @@ export default function Side({ title, body }) {
   ));
 
   return (
-    <Stack height={1}>
+    <Stack height={1} mt={2}>
       <Typography variant="h2" color="primary">
         {title}
       </Typography>

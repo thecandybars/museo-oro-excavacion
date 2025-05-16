@@ -58,7 +58,7 @@ export default function Side() {
   //   </Button>
   // );
   return (
-    <Stack justifyContent="space-between">
+    <Stack justifyContent="space-between" mt={2}>
       {renderPage0}
       {/* <Stack> {currentPage === 0 ? renderPage0 : renderPage1}</Stack> */}
       {/* {renderBibliographyButton} */}

@@ -44,9 +44,9 @@ export default function Excavacion() {
   return (
     <PageWrapper>
       <Side title={texts[currentStep].title} body={texts[currentStep].body} />
-      <Stack>
+      <Stack height="100%">
         {/* 3D PLAYER */}
-        <Box position="relative" width="100%" bgcolor="#ddd" height="75vh">
+        <Box position="relative" width="100%" bgcolor="#ddd" height="100%">
           {!isPlaying && (
             <Marker
               marker={markers[currentStep]}
