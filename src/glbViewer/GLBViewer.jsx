@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unknown-property */
 /* eslint-disable react/prop-types */
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { Canvas, useThree } from "@react-three/fiber";
 import {
   OrbitControls,
@@ -24,6 +24,7 @@ export default function GLBViewer({
   onReady,
 }) {
   const { highContrast } = useContext(AccesibilityContext);
+  const controlsRef = useRef();
 
   return (
     <Canvas style={{ filter: highContrast ? "invert(1)" : "none" }}>
@@ -38,8 +39,10 @@ export default function GLBViewer({
         selectedLayer={selectedLayer}
         key={model.url}
         onReady={onReady}
+        controlsRef={controlsRef}
       />
       <OrbitControls
+        ref={controlsRef}
         autoRotate={rotateModel}
         autoRotateSpeed={2}
         // maxDistance={15}
@@ -49,7 +52,7 @@ export default function GLBViewer({
   );
 }
 
-function Model({ model, selectedLayer, onReady }) {
+function Model({ model, selectedLayer, onReady, controlsRef }) {
   const { scene } = useGLTF(model.url);
   const { camera } = useThree();
   const [selectedMarker, setSelectedMarker] = useState(null);
@@ -61,15 +64,6 @@ function Model({ model, selectedLayer, onReady }) {
   }
 
   useEffect(() => {
-    // Temporarily store and remove invisible children
-    // const invisibleChildren = [];
-    // scene.children.forEach((child) => {
-    //   if (!child.visible) {
-    //     invisibleChildren.push(child);
-    //     scene.remove(child);
-    //   }
-    // });
-
     // Compute bounding box
     const defaultDirection = new THREE.Vector3(0, 0.5, 1).normalize(); // Camera direction
 
@@ -87,8 +81,12 @@ function Model({ model, selectedLayer, onReady }) {
     const newPosition = defaultDirection.clone().multiplyScalar(distance * 0.7);
     camera.position.copy(newPosition);
     camera.lookAt(0, 0, 0);
-    // Restore invisible children
-    // invisibleChildren.forEach((child) => scene.add(child));
+
+    // 💡 Reset OrbitControls target
+    if (controlsRef?.current) {
+      controlsRef.current.target.set(0, 0, 0);
+      controlsRef.current.update();
+    }
 
     if (onReady) onReady();
   }, [model, selectedLayer, scene, camera]);

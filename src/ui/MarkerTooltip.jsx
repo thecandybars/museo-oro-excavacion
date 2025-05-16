@@ -70,7 +70,6 @@ export default function MarkerTooltip({
       {indiceLetras[index]}
     </Box>
   ));
-  console.log(poi);
   // IMAGE+POIs
   const renderImageWithPOIs = (
     <Box position="relative">

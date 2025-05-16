@@ -56,7 +56,7 @@ export const models = [
   {
     id: 5,
     url: "/models/plato.glb",
-    markerScale: 20,
+    markerScale: 10,
     markers: [
       {
         id: 1,
