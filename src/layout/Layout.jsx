@@ -14,8 +14,8 @@ export default function Layout() {
         color: "text.primary",
         height: "100vh",
         width: "100vw",
-        padding: 2,
-        gap: 2,
+        padding: 1,
+        gap: 1,
         filter: highContrast ? "invert(1)" : "none",
       }}
     >

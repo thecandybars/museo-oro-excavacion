@@ -1,9 +1,9 @@
-import { Box, Stack, Typography } from "@mui/material";
-import ButtonNav from "../../ui/ButtonNav";
+import { Box, Button, Stack, Typography } from "@mui/material";
 import { useContext } from "react";
 import { LanguageContext } from "../../contexts/LanguageContext";
 import translations from "../../utils/translations";
 import { theme } from "../../utils/theme/ThemeProviderWrapper";
+import { Link } from "react-router";
 
 export default function Idioma() {
   const { lang, setLang } = useContext(LanguageContext);
@@ -15,7 +15,8 @@ export default function Idioma() {
       sx={{ backgroundColor: "black", color: "white" }}
       alignItems="center"
       justifyContent={"space-between"}
-      p={8}
+      pb={2}
+      pt={4}
     >
       <img
         src="/logo_moz.png"
@@ -38,8 +39,35 @@ export default function Idioma() {
         {t.titulo.toUpperCase()}
       </Typography>
       <Box display={"flex"} gap={2}>
-        <ButtonNav text="Español" to="/indice" onClick={() => setLang("es")} />
-        <ButtonNav text="English" to="/indice" onClick={() => setLang("en")} />
+        <Button
+          variant="contained"
+          component={Link}
+          to="/indice"
+          sx={{
+            py: 1,
+            px: 3,
+            borderRadius: 100,
+            color: "white",
+          }}
+          onClick={() => setLang("es")}
+        >
+          <Typography variant="h4"> Español</Typography>
+        </Button>
+        <Button
+          variant="outlined"
+          component={Link}
+          to="/indice"
+          sx={{
+            py: 1,
+            px: 3,
+            border: `3px solid ${theme.palette.primary.main}`,
+            borderRadius: 100,
+            color: "white",
+          }}
+          onClick={() => setLang("en")}
+        >
+          <Typography variant="h4">English</Typography>
+        </Button>
       </Box>
       <img
         src="/logo_banco_republica.png"

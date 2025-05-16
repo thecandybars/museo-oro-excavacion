@@ -38,7 +38,12 @@ export default function GLBViewer({
         key={model.url}
         onReady={onReady}
       />
-      <OrbitControls autoRotate={rotateModel} autoRotateSpeed={2} />
+      <OrbitControls
+        autoRotate={rotateModel}
+        autoRotateSpeed={2}
+        maxDistance={15}
+        minDistance={5}
+      />
     </Canvas>
   );
 }
@@ -46,7 +51,6 @@ export default function GLBViewer({
 function Model({ model, selectedLayer, onReady }) {
   const { scene } = useGLTF(model.url);
   const { camera } = useThree();
-  console.log("🚀 ~ Model ~ camera:", camera);
   const [selectedMarker, setSelectedMarker] = useState(null);
   const { highContrast, fontScale } = useContext(AccesibilityContext);
 
@@ -86,7 +90,6 @@ function Model({ model, selectedLayer, onReady }) {
   const selectedMarkerData = model.markers.find(
     (marker) => marker.id === selectedMarker
   );
-  console.log("🚀 ~ Model ~ selectedMarkerData:", selectedMarkerData);
 
   return (
     <group>

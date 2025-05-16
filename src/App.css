@@ -88,3 +88,25 @@ textarea:not([rows]) {
 :target {
   scroll-margin-block: 5ex;
 }
+
+/* FONTS */
+@font-face {
+  font-family: "Fugue Headline";
+  src: url("./assets/fonts/fugue_headline.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Fugue Regular";
+  src: url("./assets/fonts/fugue_regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Fugue Regular Italic";
+  src: url("./assets/fonts/fugue_regular_italic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+}

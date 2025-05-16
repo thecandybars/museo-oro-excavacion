@@ -3,7 +3,6 @@ import { useContext, useRef, useState } from "react";
 import { TransformComponent, TransformWrapper } from "react-zoom-pan-pinch";
 import { LanguageContext } from "../../contexts/LanguageContext";
 import translations from "../../utils/translations";
-// import TimelineButton from "../../ui/MapToolbox/TimelineButton";
 import ToolBoxWrapper from "../../ui/MapToolbox/ToolboxWrapper";
 import Marker from "../../ui/Marker";
 import ZoomButton from "../../ui/MapToolbox/ZoomButton";
@@ -15,10 +14,6 @@ export default function Mapa() {
   const { lang } = useContext(LanguageContext);
   const t = translations[lang].map;
 
-  const mapas = ["mapa01.jpg", "mapa02.jpg", "mapa03.jpg"];
-
-  // const [map, setMap] = useState(0);
-  const map = 0;
   const [isPanning, setIsPanning] = useState(false);
 
   const { highContrast } = useContext(AccesibilityContext);
@@ -89,9 +84,6 @@ export default function Mapa() {
 
   return (
     <Box
-      // onClick={() => {
-      //   selectedMarker !== null && setSelectedMarker(null);
-      // }}
       sx={{
         cursor: isPanning ? "grabbing" : "grab",
       }}
@@ -114,7 +106,7 @@ export default function Mapa() {
           <Box sx={{ position: "relative", width: "100%" }}>
             {renderMarkers}
             <img
-              src={`/${mapas[map / 10]}`}
+              src="/mapa01.jpg"
               width="100%"
               style={{
                 width: "100%",
@@ -129,7 +121,6 @@ export default function Mapa() {
 
       {/* TOOLBOX */}
       <ToolBoxWrapper>
-        {/* <TimelineButton value={map} onChange={(value) => setMap(value)} /> */}
         <ZoomButton wrapperRef={wrapperRef} />
       </ToolBoxWrapper>
     </Box>

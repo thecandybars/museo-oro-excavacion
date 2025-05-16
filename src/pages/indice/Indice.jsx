@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import translations from "../../utils/translations";
 import { LanguageContext } from "../../contexts/LanguageContext";
-import { Box, List, ListItem, Stack, Typography } from "@mui/material";
+import { Box, Button, List, ListItem, Stack, Typography } from "@mui/material";
 import { CircleIcon } from "../../utils/icons";
-import ButtonNav from "../../ui/ButtonNav";
+import { Link } from "react-router";
 
 export default function Indice() {
   const { lang } = useContext(LanguageContext);
@@ -29,7 +29,20 @@ export default function Indice() {
         Vive esta experiencia arqueológica. Aquí encontraras historias sobre…
       </Typography>
       <Box>{renderIndice}</Box>
-      <ButtonNav text={t.boton} to="/mapa" style={{ paddingX: "3rem" }} />
+      <Button
+        to="/mapa"
+        variant="contained"
+        component={Link}
+        style={{ paddingX: "3rem" }}
+        sx={{
+          py: 1,
+          px: 3,
+          borderRadius: 100,
+          color: "white",
+        }}
+      >
+        <Typography variant="h4">{t.boton}</Typography>
+      </Button>
       <img
         src="/logo_banco_republica.png"
         alt="logo moz"

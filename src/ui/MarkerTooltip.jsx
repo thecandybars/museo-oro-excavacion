@@ -32,7 +32,6 @@ export default function MarkerTooltip({
       borderRadius: "100%",
       border: `1px solid ${theme.palette.primary.light}`,
       sx: {
-        mr: 1,
         p: 1,
         fontWeight: 500,
         fontSize: `${0.7 * fontScaler}rem`,
@@ -90,6 +89,7 @@ export default function MarkerTooltip({
         display={"flex"}
         alignItems={"baseline"}
         justifyContent={"flex-start"}
+        gap={0.3}
       >
         <Typography {...styles.poi}>{indiceLetras[index]}</Typography>
         <Typography
@@ -152,7 +152,7 @@ export default function MarkerTooltip({
           {list && (
             <Box
               display={"flex"}
-              gap={1}
+              gap={2}
               flexWrap={"wrap"}
               textAlign={"left"}
               // justifyContent={"center"}

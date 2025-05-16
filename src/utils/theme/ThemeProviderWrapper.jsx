@@ -31,49 +31,63 @@ export default function ThemeProviderWrapper({ children }) {
       createTheme({
         ...theme,
         typography: {
-          fontFamily: "Roboto",
-          fontWeightRegular: 300,
+          // fontFamily: "Roboto",
+          fontFamily: "Fugue Regular,courier",
+          // fontFamily: "Fugue Regular, Roboto, sans-serif",
+          fontWeightRegular: 400,
           button: {
             textTransform: "none",
           },
           h1: {
+            fontFamily: "Fugue Headline",
             fontWeight: 700,
             fontSize: `${3 * fontScaler}rem`,
             marginBottom: "1rem",
           },
           h2: {
+            fontFamily: "Fugue Headline",
             fontWeight: 700,
             fontSize: `${1.6 * fontScaler}rem`,
             marginBottom: "1rem",
           },
           h3: {
-            fontWeight: 500,
+            fontFamily: "Fugue Regular",
+            fontWeight: 400,
             fontSize: `${1.3 * fontScaler}rem`,
           },
           h4: {
-            fontWeight: 500,
+            fontFamily: "Fugue Regular",
+
+            fontWeight: 400,
             fontSize: `${1.6 * fontScaler}rem`,
           },
           h5: {
-            fontWeight: 500,
+            fontFamily: "Fugue Regular",
+
+            fontWeight: 400,
             fontSize: `${1.3 * fontScaler}rem`,
           },
           h6: {
+            fontFamily: "Fugue Regular",
+
             fontWeight: 700,
             fontSize: `${1.1 * fontScaler}rem`,
           },
           body1: {
+            fontFamily: "Fugue Regular",
+
             fontWeight: 400,
             fontSize: `${1 * fontScaler}rem`,
           },
           caption: {
-            fontWeight: 300,
-            fontSize: `${0.8 * fontScaler}rem`,
+            fontFamily: "Fugue Regular Italic",
+            fontWeight: 400,
+            fontSize: `${0.9 * fontScaler}rem`,
             // marginY: 0,
           },
           label: {
-            fontWeight: 300,
-            fontSize: `${0.7 * fontScaler}rem`,
+            fontWeight: 400,
+            fontSize: `${0.9 * fontScaler}rem`,
           },
           error: {
             fontFamily: "Work Sans",
