@@ -13,3 +13,4 @@ export { default as TextIncreaseIcon } from "@mui/icons-material/TextIncrease";
 export { default as VisibilityIcon } from "@mui/icons-material/Visibility";
 export { default as SkipNextIcon } from "@mui/icons-material/SkipNext";
 export { default as CircleIcon } from "@mui/icons-material/Circle";
+export { default as CreditosIcon } from "@mui/icons-material/AutoStories";

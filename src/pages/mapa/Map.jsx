@@ -31,6 +31,10 @@ export default function Mapa() {
       image: "/mapa_t2.jpeg",
       position: { x: 44, y: 36 },
       positionTooltip: { x: 43, y: 20 },
+      imagePOIs: [
+        [50, 40],
+        [75, 10],
+      ],
     },
     {
       id: 1,
@@ -43,10 +47,21 @@ export default function Mapa() {
       image: "/mapa_t1_1.jpeg",
       position: { x: 37.5, y: 35.5 },
       positionTooltip: { x: 35, y: 20 },
+      imagePOIs: [
+        [90, 30],
+        [60, 90],
+      ],
     },
     {
       id: 3,
       image: "/mapa_t1_2.jpeg",
+      imagePOIs: [
+        [11, 1],
+        [40, 1],
+        [90, 1],
+        [90, 50],
+        [45, 60],
+      ],
       position: { x: 40, y: 33 },
       positionTooltip: { x: 43, y: 20 },
       path: "/excavacion",

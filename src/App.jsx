@@ -20,7 +20,7 @@ function App() {
           <Route path="casa" element={<Casa />} />
           <Route path="excavacion" element={<Excavacion />} />
           <Route path="piezas" element={<Piezas />} />
-          <Route path="*" element={<NoPage />} />
+          <Route path="*" element={<Idioma />} />
         </Route>
       </Routes>
     </BrowserRouter>
@@ -28,7 +28,3 @@ function App() {
 }
 
 export default App;
-
-function NoPage() {
-  return <p>paila</p>;
-}

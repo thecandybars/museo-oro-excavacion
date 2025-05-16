@@ -15,7 +15,7 @@ const translations = {
         "La ciudad colonial",
         // "La casa colonial",
         "Excavaciones en la casa",
-        "Los objetos",
+        "Cosas del pasado",
       ],
       boton: "Iniciar recorrido",
     },
@@ -49,28 +49,31 @@ const translations = {
         {
           id: 0,
           caption: "1",
-          title: "Plaza Real",
-          description: "Importante sitio histórico y religioso",
-          button: "",
+          title: "Modelo del muelle de Cartagena, 1571",
+          description:
+            "La Plaza Real, hoy Plaza de la Aduana, era el centro del comercio en donde se subastaban personas africanas para ser esclavizadas y se ofertaban mercancías. El comercio de personas estuvo amparado en el principio de la propiedad de un ser humano sobre el otro y sobre su descendencia. Esta plaza, al igual que la conocida hoy como del Reloj, ha sido testigo de la trata y explotación de personas a lo largo del tiempo.",
+          list: "Plaza Real.Carniceria",
         },
         {
           id: 1,
           caption: "2",
-          title: "Nuevo 1",
-          description: "Centro Histórico de Cartagena",
+          title: "Plaza Mayor",
+          description:
+            "En la plaza administrativa, conocida como Plaza Mayor, hoy Parque de Bolívar, se establecieron las instituciones coloniales que rigieron la vida de la ciudad y de sus habitantes. Fueron pocas las casas de propiedad de particulares en esta plaza.",
         },
         {
           id: 2,
           caption: "3",
-          title: "Plaza Mayor",
-          description: "Centro Histórico de Cartagena",
+          description:
+            "En 1570, Cartagena tenía cerca de 400 casas construidas en piedra y en bahareque. Un incendio de 1552 había destruido las construcciones en palma y caña. En el ataque de Drake de 1586, la ciudad pierde de nuevo la mitad de sus casas. Por orden del cabildo, los propietarios fueron obligados a reconstruirlas en mampostería (piedra y ladrillo).",
+          list: "Casas con fachadas de cal.Casas de bahareque o madera",
         },
         {
           id: 3,
           caption: "4",
-          title: "Nuevo 2",
-          description: "Centro Histórico de Cartagena",
-          button: "Visitar Casa Colonial",
+          title: "La manzana del Museo del Oro Zenú durante la toma de Drake",
+          list: "Gobernación.Casa del carcelero.Botica.Casa Museo del Oro Zenú.Centros de manzana verdes por las huertas",
+          button: "Visita la casa",
         },
       ],
     },
@@ -113,25 +116,31 @@ const translations = {
     excavacion: {
       sideTitle: "Excavaciones en la casa",
       sideParagraph:
-        "Observa las diferentes capas de la excavación arqueológica. Haz clic en los puntos de interés para obtener más información y acceder a la vista 3D.",
+        "Las arqueólogas y arqueólogos seleccionaron dos áreas estratégicas para excavar en la casa del Museo del Oro Zenú. En cada una obtuvieron información diferente.\nEn la excavación de la antigua huerta o solar de la casa, donde los habitantes de las casas coloniales botaban los desechos, hallaron huellas de una letrina del siglo XIX con numerosos artefactos. La excavación al lado del aljibe, en lo que era el pozo de aguas residuales, permitió conocer sobre los pobladores indígenas prehispánicos y del contacto inicial con los españoles.",
       markers: [
         {
           caption: "1",
-          title: "Excavación Arqueológica",
+          title: "El albañal",
+          sideParagraph:
+            "El albañal, construido cerca de la cocina y del aljibe, sirvió como desagüe de las aguas sucias producto de las actividades domésticas.\nLa excavación arqueológica mostró en esta área una alteración de las capas de suelo causada por la construcción del aljibe. En estas capas se encontraron objetos de la vida cotidiana indígena.",
           description:
-            "La descripción de la excavación arqueológica se muestra aquí.",
+            "Este es el dibujo arqueológico de un perfil estratigráfico. Cada estrato o nivel es un depósito de actividades de una ocupación humana o de un evento natural. Aquí los estratos están revueltos.",
           button: "Cerrar",
         },
         {
           caption: "2",
-          title: "Excavación Arqueológica",
+          title: "Lo que cuenta una letrina",
+          sideParagraph:
+            "Una letrina es una estructura con foso para depositar los excrementos humanos que contribuye a disminuir los problemas de salubridad.\nEn la excavación de la letrina de la casa se encontró una acumulación de objetos que cuentan sobre los remedios usados para combatir las enfermedades más comunes en la ciudad, el cuidado personal y las prácticas de mesa.",
           description:
-            "La descripción de la excavación arqueológica se muestra aquí.",
+            "En este perfil estratigráfico se observa en la parte superior bacinicas, botellas y otros utensilios que se desecharon cuando se clausuró la letrina en el siglo XX.",
           button: "Cerrar",
         },
       ],
       botones: {
+        linkNext: "Explorar excavaciones",
         linkPiezas: "Explorar piezas",
+        reset: "Reiniciar exploración",
       },
     },
 
@@ -163,20 +172,8 @@ const translations = {
           markers: [
             {
               id: 1,
-              title: "CURTIS & PERKINS PROPRIETORS",
-              description:
-                "Comercializadores del medicamento. Curtis es el yerno de la señora Winslow y Perkins, su socio. ",
-            },
-            {
-              id: 2,
-              title: "Mrs. WINSLOW'S SYRUP",
-              description:
-                "El nombre del medicamento se toma de la médica Charlotte N. Winslow, suegra de Curtis. Al asociarse a una mujer le daba un aire de confianza maternal al jarabe.",
-            },
-            {
-              id: 3,
-              title: "THE ANGLO AMERICAN DRUG CO SUCCESSORS",
-              description: "Nombre de la compañía farmacéutica",
+              title: "Marcas en la botella",
+              list: "Comercializadores del medicamento: Curtis es el yerno de la señora Winslow y Perkins, su socio.El nombre del medicamento se toma de la médica Charlotte Winslow, suegra de Curtis; al asociarse a una mujer le daba un aire de confianza maternal al jarabe.Nombre de la compañía farmacéutica",
             },
           ],
         },
@@ -189,8 +186,7 @@ const translations = {
           markers: [
             {
               id: 1,
-              description:
-                "Estandarización del tamaño de los orificios como indicador de elaboración industrial",
+              list: "Estandarización del tamaño de los orificios como indicador de elaboración industrial",
             },
           ],
         },
@@ -203,7 +199,7 @@ const translations = {
           markers: [
             {
               id: 1,
-              description: "Unión del diseño impreso en el papel",
+              list: "Unión del diseño impreso en el papel",
             },
           ],
         },
@@ -216,12 +212,11 @@ const translations = {
           markers: [
             {
               id: 1,
-              description: "Vidriado opaco en dos tonos de azul",
+              list: "Vidriado opaco en dos tonos de azul",
             },
             {
               id: 2,
-              description:
-                "Pasta original quemada antes de aplicar el esmalte (bizcocho)",
+              list: "Pasta original quemada antes de aplicar el esmalte (bizcocho)",
             },
           ],
         },
@@ -254,18 +249,14 @@ const translations = {
         },
         {
           id: 8,
-          title: "Basin",
+          title: "Bacín",
           sideTitle: "Bacinica inglesa",
           sideParagraph:
             "La idea de higiene durante buena parte del periodo colonial fue distinta a la actual. La orina y heces se depositaban en los bacines, que se mantenían bajo las camas o acomodados en una silla inodoro.\nCuando estos desechos no se vertían en la huerta, en el albañal o en la letrina, eran botados a la calle. Sin lluvias, esta práctica contribuía al ambiente malsano de Cartagena de Indias.",
           markers: [
             {
               id: 1,
-              description: "Superficie vidriada",
-            },
-            {
-              id: 2,
-              description: "Pasta cerámica",
+              list: "Superficie vidriada.Pasta cerámica",
             },
           ],
         },
@@ -278,22 +269,19 @@ const translations = {
           markers: [
             {
               id: 1,
-              description:
-                "La capa de hollín indica que el budare fue puesto al fuego",
+              list: "La capa de hollín indica que el budare fue puesto al fuego",
             },
             {
               id: 2,
-              description:
-                "Vitrificación del contenido de silicio por acción del calor",
+              list: "Vitrificación del contenido de silicio por acción del calor",
             },
             {
               id: 3,
-              description: "Veta de corrosión de mineral rico en hierro",
+              list: "Veta de corrosión de mineral rico en hierro",
             },
             {
               id: 4,
-              description:
-                "Concreciones de sales formadas por la reacción con el suelo",
+              list: "Concreciones de sales formadas por la reacción con el suelo",
             },
           ],
         },
@@ -311,8 +299,7 @@ const translations = {
             },
             {
               id: 2,
-              description:
-                "El vidriado en la superficie interior es más grueso y se preservó mejor",
+              list: "El vidriado en la superficie interior es más grueso y se preservó mejor.Pasta cerámica de la escudilla",
             },
           ],
         },
@@ -329,8 +316,7 @@ const translations = {
             },
             {
               id: 2,
-              description:
-                "Estas inclusiones de arena que se encuentran en la pasta fueron el desgrasante usado para darle cuerpo a la arcilla",
+              list: "Estas inclusiones de arena que se encuentran en la pasta fueron el desgrasante usado para darle cuerpo a la arcilla",
             },
           ],
         },
@@ -343,13 +329,11 @@ const translations = {
           markers: [
             {
               id: 1,
-              description:
-                "La transparencia es una característica propia de rocas ricas en sílice como el chert ",
+              list: "La transparencia es una característica propia de rocas ricas en sílice como el chert ",
             },
             {
               id: 2,
-              description:
-                "El filo cortante fue obtenido por la técnica de presión aplicada en ambos lados",
+              list: "El filo cortante fue obtenido por la técnica de presión aplicada en ambos lados",
             },
           ],
         },
@@ -362,12 +346,11 @@ const translations = {
           markers: [
             {
               id: 1,
-              description:
-                "Decoración ungulada, es decir, hecha con impresiones de los dedos, típica de la tradición alfarera africana",
+              list: "Decoración ungulada, es decir, hecha con impresiones de los dedos, típica de la tradición alfarera africana",
             },
             {
               id: 2,
-              description: "Residuos de los alimentos preparados",
+              list: "Residuos de los alimentos preparados",
             },
           ],
         },
@@ -446,7 +429,7 @@ const translations = {
           caption: "4",
           title: "New 2",
           description: "Cartagena's historic downtown",
-          button: "Visit Colonial House",
+          button: "Visit the house",
         },
       ],
     },

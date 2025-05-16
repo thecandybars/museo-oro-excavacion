@@ -10,7 +10,7 @@ export const theme = {
       dark: "#6e5200",
       main: "#a67c00",
       light: "#d3af44",
-      translucid: "#caab4f5f",
+      translucid: "#caab4f99",
     },
     secondary: {
       main: "#005f6a",
@@ -67,15 +67,13 @@ export default function ThemeProviderWrapper({ children }) {
             fontSize: `${1 * fontScaler}rem`,
           },
           caption: {
-            fontFamily: "Work Sans",
             fontWeight: 300,
-            fontSize: `${0.75 * fontScaler}rem`,
-            marginY: 0,
+            fontSize: `${0.8 * fontScaler}rem`,
+            // marginY: 0,
           },
           label: {
-            fontFamily: "Work Sans",
             fontWeight: 300,
-            fontSize: `${0.9 * fontScaler}rem`,
+            fontSize: `${0.7 * fontScaler}rem`,
           },
           error: {
             fontFamily: "Work Sans",

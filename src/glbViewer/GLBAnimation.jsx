@@ -109,7 +109,7 @@ export default function GLBAnimation({ step, onPlaying }) {
         <ambientLight />
         <GLBScene
           ref={sceneRef}
-          url="/models/casa-3d-export-4.glb"
+          url="/models/casa-con-modelos.glb"
           isPlaying={isPlaying}
           targetProgress={targetProgress}
           onStop={handleStop}

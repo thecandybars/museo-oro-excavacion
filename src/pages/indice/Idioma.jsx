@@ -32,10 +32,10 @@ export default function Idioma() {
           paddingX: 5,
           paddingY: 2,
           marginY: 2,
-          textShadow: `3px 3px 1px ${theme.palette.primary.translucid}`,
+          // textShadow: `3px 3px 1px ${theme.palette.primary.translucid}`,
         }}
       >
-        {t.titulo}
+        {t.titulo.toUpperCase()}
       </Typography>
       <Box display={"flex"} gap={2}>
         <ButtonNav text="Español" to="/indice" onClick={() => setLang("es")} />

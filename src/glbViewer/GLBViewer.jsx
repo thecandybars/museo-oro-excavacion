@@ -22,7 +22,6 @@ export default function GLBViewer({
   selectedLayer = "both",
   onReady,
 }) {
-  console.log("🚀 ~ model:", model);
   const { highContrast } = useContext(AccesibilityContext);
 
   return (
@@ -41,6 +40,94 @@ export default function GLBViewer({
       />
       <OrbitControls autoRotate={rotateModel} autoRotateSpeed={2} />
     </Canvas>
+  );
+}
+
+function Model({ model, selectedLayer, onReady }) {
+  const { scene } = useGLTF(model.url);
+  const { camera } = useThree();
+  console.log("🚀 ~ Model ~ camera:", camera);
+  const [selectedMarker, setSelectedMarker] = useState(null);
+  const { highContrast, fontScale } = useContext(AccesibilityContext);
+
+  if (scene.children.length > 1 && selectedLayer) {
+    scene.children[0].visible = selectedLayer !== "first";
+    scene.children[1].visible = selectedLayer !== "second";
+  }
+
+  useEffect(() => {
+    // Temporarily store and remove invisible children
+    // const invisibleChildren = [];
+    // scene.children.forEach((child) => {
+    //   if (!child.visible) {
+    //     invisibleChildren.push(child);
+    //     scene.remove(child);
+    //   }
+    // });
+
+    // Compute bounding box
+    const box = new THREE.Box3().setFromObject(scene);
+    const center = box.getCenter(new THREE.Vector3());
+    const size = box.getSize(new THREE.Vector3());
+    const maxDim = Math.max(size.x, size.y, size.z);
+    const fov = camera.fov * (Math.PI / 180);
+    const distance = Math.abs(maxDim / Math.sin(fov / 2));
+
+    scene.position.sub(center);
+    camera.position.set(0, 1.4, distance / 2);
+    camera.lookAt(0, 0, 0);
+
+    // Restore invisible children
+    // invisibleChildren.forEach((child) => scene.add(child));
+
+    if (onReady) onReady();
+  }, [model, selectedLayer, scene, camera]);
+
+  const selectedMarkerData = model.markers.find(
+    (marker) => marker.id === selectedMarker
+  );
+  console.log("🚀 ~ Model ~ selectedMarkerData:", selectedMarkerData);
+
+  return (
+    <group>
+      <primitive object={scene} scale={[1, 1, 1]} />
+      {model.markers?.map((marker) => (
+        <Marker3D
+          key={marker.id}
+          position={marker.position}
+          text={marker.id}
+          onClick={() => setSelectedMarker(marker.id)}
+          highContrast={highContrast}
+          scale={model.markerScale}
+        />
+      ))}
+      <Html
+        key={selectedMarkerData?.id}
+        position={[
+          selectedMarkerData?.position[0],
+          selectedMarkerData?.position[1] * 0.8,
+          selectedMarkerData?.position[2],
+        ]}
+        style={{
+          filter: highContrast ? "invert(1)" : "none",
+          position: "relative",
+          display: selectedMarker ? "block" : "none",
+        }}
+      >
+        <MarkerTooltip
+          image={selectedMarkerData?.image}
+          imagePOIs={selectedMarkerData?.imagePOIs}
+          title={selectedMarkerData?.title}
+          description={selectedMarkerData?.description}
+          list={selectedMarkerData?.list}
+          onClose={() => setSelectedMarker(null)}
+          // Context passed as props cause Html element creates a separete React tree
+          highContrastProp={highContrast}
+          fontScaleProp={fontScale}
+          // AI says : The <Html> component from @react-three/drei creates a portal to render HTML content outside the normal React Three Fiber component tree. This creates a disconnect in the React context chain, so components inside the Html portal can't access contexts from the parent tree.
+        />
+      </Html>
+    </group>
   );
 }
 
@@ -84,103 +171,6 @@ function Marker3D({ position, text, onClick, highContrast, scale }) {
           {text}
         </Text>
       </Billboard>
-    </group>
-  );
-}
-
-function Model({ model, selectedLayer, onReady }) {
-  const { scene } = useGLTF(model.url);
-  const { camera } = useThree();
-  const [selectedMarker, setSelectedMarker] = useState(null);
-  const { highContrast, fontScale } = useContext(AccesibilityContext);
-
-  if (scene.children.length > 1 && selectedLayer) {
-    scene.children[0].visible = selectedLayer !== "first";
-    scene.children[1].visible = selectedLayer !== "second";
-  }
-
-  useEffect(() => {
-    // Compute the bounding box and its center
-    const box = new THREE.Box3().setFromObject(scene);
-    const center = box.getCenter(new THREE.Vector3());
-    const size = box.getSize(new THREE.Vector3());
-    const maxDim = Math.max(size.x, size.y, size.z);
-    const fov = camera.fov * (Math.PI / 180);
-    const distance = Math.abs(maxDim / Math.sin(fov / 2));
-
-    // Shift the scene so the center of the bounding box is at (0, 0, 0)
-    scene.position.sub(center);
-
-    // Position the camera so the model fits nicely in view (centered at origin)
-    camera.position.set(0, 1.4, distance / 2);
-    camera.lookAt(0, 0, 0);
-    if (onReady) onReady();
-  }, [model.url, selectedLayer]);
-
-  const selectedMarkerData = model.markers.find(
-    (marker) => marker.id === selectedMarker
-  );
-
-  return (
-    <group>
-      <primitive object={scene} scale={[1, 1, 1]} />
-      {model.markers?.map((marker) => (
-        <Marker3D
-          key={marker.id}
-          position={marker.position}
-          text={marker.id}
-          onClick={() => setSelectedMarker(marker.id)}
-          highContrast={highContrast}
-          scale={model.markerScale}
-        />
-      ))}
-
-      <Html
-        key={selectedMarkerData?.id}
-        position={[
-          selectedMarkerData?.position[0],
-          selectedMarkerData?.position[1] * 0.8,
-          selectedMarkerData?.position[2],
-        ]}
-        style={{
-          filter: highContrast ? "invert(1)" : "none",
-          position: "relative",
-          display: selectedMarker ? "block" : "none",
-        }}
-      >
-        <MarkerTooltip
-          image={selectedMarkerData?.image}
-          title={selectedMarkerData?.title}
-          description={selectedMarkerData?.description}
-          onClose={() => setSelectedMarker(null)}
-          // Context passed as props cause Html element creates a separete React
-          highContrastProp={highContrast}
-          fontScaleProp={fontScale}
-          // AI says : The <Html> component from @react-three/drei creates a portal to render HTML content outside the normal React Three Fiber component tree. This creates a disconnect in the React context chain, so components inside the Html portal can't access contexts from the parent tree.
-        />
-      </Html>
-
-      {/* <Html
-        key={"marker.id"}
-        position={[2, 4.5, 2]}
-        style={{
-          filter: highContrast ? "invert(1)" : "none",
-          position: "relative",
-        }}
-      >
-        <MarkerTooltip
-          image="../../public/mapa01.jpg"
-          title="Hola"
-          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
-          // path={marker.path}
-          // button={marker.button}
-          onClose={() => console.log("close")}
-          // Context passed as props cause Html element creates a separete React
-          highContrastProp={highContrast}
-          fontScaleProp={fontScale}
-          // AI says : The <Html> component from @react-three/drei creates a portal to render HTML content outside the normal React Three Fiber component tree. This creates a disconnect in the React context chain, so components inside the Html portal can't access contexts from the parent tree.
-        />
-      </Html> */}
     </group>
   );
 }

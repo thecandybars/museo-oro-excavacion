@@ -9,21 +9,45 @@ import { theme } from "../utils/theme/ThemeProviderWrapper";
 
 export default function MarkerTooltip({
   image,
+  imagePOIs,
   title,
   path,
   description,
+  list,
   button,
   onClose,
   highContrastProp,
   fontScaleProp = false,
 }) {
-  console.log("🚀 ~ highContrastProp:", highContrastProp);
-  const highContrast =
-    !!useContext(AccesibilityContext)?.highContrast || highContrastProp;
-  console.log("🚀 ~ highContrast:", highContrast);
   const fontScale = useContext(AccesibilityContext)?.fontScale || fontScaleProp;
   const fontScaler = fontScale ? 1.7 : 1;
+  const styles = {
+    poi: {
+      variant: "label",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      color: "white",
+      bgcolor: theme.palette.primary.main,
+      borderRadius: "100%",
+      border: `1px solid ${theme.palette.primary.light}`,
+      sx: {
+        mr: 1,
+        p: 1,
+        fontWeight: 500,
+        fontSize: `${0.7 * fontScaler}rem`,
+      },
+      width: "25px",
+      height: "25px",
+    },
+  };
 
+  const indiceLetras = ["a", "b", "c", "d", "e", "f"];
+
+  const highContrast =
+    !!useContext(AccesibilityContext)?.highContrast || highContrastProp;
+
+  // IMAGE
   const renderImage = (
     <img
       src={image}
@@ -35,6 +59,53 @@ export default function MarkerTooltip({
       }}
     />
   );
+  // IMAGE POIs
+  const poi = imagePOIs?.map((poi, index) => (
+    <Box
+      key={poi[0] + poi[1]}
+      position="absolute"
+      top={`${poi[0]}%`}
+      left={`${poi[1]}%`}
+      {...styles.poi}
+    >
+      {indiceLetras[index]}
+    </Box>
+  ));
+  console.log(poi);
+  // IMAGE+POIs
+  const renderImageWithPOIs = (
+    <Box position="relative">
+      <>
+        {poi}
+        {renderImage}
+      </>
+    </Box>
+  );
+
+  const listFormatted =
+    list &&
+    list.split(".").map((text, index) => (
+      <Box
+        key={index}
+        display={"flex"}
+        alignItems={"baseline"}
+        justifyContent={"flex-start"}
+      >
+        <Typography {...styles.poi}>{indiceLetras[index]}</Typography>
+        <Typography
+          variant="caption"
+          key={index}
+          display={"flex"}
+          alignItems={"baseline"}
+          sx={{
+            fontWeight: 300,
+            fontSize: `${0.8 * fontScaler}rem`,
+          }}
+        >
+          {text}
+        </Typography>
+      </Box>
+    ));
 
   return (
     <Box
@@ -64,7 +135,8 @@ export default function MarkerTooltip({
           />
         </Box>
         <Stack alignItems={"center"} gap={1} p={2}>
-          {image && renderImage}
+          {image && renderImageWithPOIs}
+          {/* {image && renderImage} */}
           {title && (
             <Typography
               variant="h6"
@@ -77,10 +149,22 @@ export default function MarkerTooltip({
               {title}
             </Typography>
           )}
+          {list && (
+            <Box
+              display={"flex"}
+              gap={1}
+              flexWrap={"wrap"}
+              textAlign={"left"}
+              // justifyContent={"center"}
+            >
+              {listFormatted}
+            </Box>
+          )}
           {description && (
             <Typography
               variant="body1"
-              sx={{ fontSize: `${1 * fontScaler}rem`, textAlign: "left" }}
+              align="left"
+              sx={{ fontWeight: 400, fontSize: `${1 * fontScaler}rem` }}
             >
               {description}
             </Typography>

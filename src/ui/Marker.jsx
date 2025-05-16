@@ -19,7 +19,7 @@ export default function Marker({ marker, onClick, isOpen, onClose }) {
         onClick={onClick}
         sx={{
           borderRadius: "100%",
-          border: `3px solid ${theme.palette.primary.translucid}`,
+          border: `3px solid ${theme.palette.primary.light}`,
         }}
       >
         <Box
@@ -29,6 +29,10 @@ export default function Marker({ marker, onClick, isOpen, onClose }) {
             borderRadius: "100%",
             border: `3px solid ${theme.palette.primary.dark}`,
             bgcolor: theme.palette.primary.translucid,
+            // bgcolor: theme.palette.primary.translucid,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
           }}
         >
           <Typography
@@ -46,11 +50,13 @@ export default function Marker({ marker, onClick, isOpen, onClose }) {
       {isOpen && (
         <MarkerTooltip
           image={marker.image}
+          imagePOIs={marker.imagePOIs}
           title={marker.title}
           description={marker.description}
           path={marker.path}
           button={marker.button}
           onClose={onClose}
+          list={marker.list}
         />
       )}
     </KeepScale>

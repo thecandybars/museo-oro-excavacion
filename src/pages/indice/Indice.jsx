@@ -23,13 +23,17 @@ export default function Indice() {
       alignItems="center"
       justifyContent={"space-between"}
       p={8}
+      gap={2}
     >
+      <Typography variant="h4" px={24} pb={4}>
+        Vive esta experiencia arqueológica. Aquí encontraras historias sobre…
+      </Typography>
       <Box>{renderIndice}</Box>
       <ButtonNav text={t.boton} to="/mapa" style={{ paddingX: "3rem" }} />
       <img
         src="/logo_banco_republica.png"
         alt="logo moz"
-        style={{ width: 163, height: "auto" }}
+        style={{ width: 120, height: "auto" }}
       />
     </Stack>
   );
