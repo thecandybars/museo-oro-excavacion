@@ -2,7 +2,7 @@ export const models = [
   {
     id: 1,
     url: "/models/botijo.glb",
-    markerScale: 3,
+    markerScale: 4,
     markers: [
       {
         id: 1,
@@ -13,7 +13,7 @@ export const models = [
   {
     id: 2,
     url: "/models/botella.glb",
-    markerScale: 0.8,
+    markerScale: 1,
     markers: [
       {
         id: 1,
@@ -30,7 +30,7 @@ export const models = [
   {
     id: 3,
     url: "/models/cepillo.glb",
-    markerScale: 1,
+    markerScale: 1.4,
     markers: [
       {
         id: 1,
@@ -43,7 +43,7 @@ export const models = [
   {
     id: 4,
     url: "/models/embudo.glb",
-    markerScale: 0.7,
+    markerScale: 0.9,
     markers: [
       {
         id: 1,
@@ -56,7 +56,7 @@ export const models = [
   {
     id: 5,
     url: "/models/plato.glb",
-    markerScale: 10,
+    markerScale: 20,
     markers: [
       {
         id: 1,
@@ -86,7 +86,7 @@ export const models = [
   {
     id: 7,
     url: "/models/vasinica.glb",
-    markerScale: 0.5,
+    markerScale: 0.3,
     markers: [
       {
         id: 1,
@@ -97,7 +97,7 @@ export const models = [
   {
     id: 8,
     url: "/models/bacin.glb",
-    markerScale: 2,
+    markerScale: 2.5,
     markers: [
       {
         id: 1,
@@ -113,7 +113,7 @@ export const models = [
   {
     id: 9,
     url: "/models/budare.glb",
-    markerScale: 2,
+    markerScale: 3,
     markers: [
       {
         id: 1,
@@ -147,7 +147,7 @@ export const models = [
   {
     id: 10,
     url: "/models/escudilla.glb",
-    markerScale: 4,
+    markerScale: 5,
     markers: [
       {
         id: 1,
@@ -169,15 +169,15 @@ export const models = [
   {
     id: 11,
     url: "/models/fragmento-ceramica-indigena.glb",
-    markerScale: 0.1,
+    markerScale: 0.05,
     markers: [
       {
         id: 1,
-        position: [0.05, 0.05, -0.05],
+        position: [0.01, 0.03, -0.01],
       },
       {
         id: 2,
-        position: [0.05, 0.03, 0.05],
+        position: [0.01, 0.03, 0.03],
         image: "/microscopio/5.jpg",
         imagePOIs: [[40, 65]],
       },
@@ -186,7 +186,7 @@ export const models = [
   {
     id: 12,
     url: "/models/litico.glb",
-    markerScale: 1,
+    markerScale: 1.5,
     markers: [
       {
         id: 1,
@@ -205,7 +205,7 @@ export const models = [
   {
     id: 13,
     url: "/models/vasija-africana.glb",
-    markerScale: 3,
+    markerScale: 5,
     markers: [
       {
         id: 1,

@@ -13,6 +13,7 @@ import { AccesibilityContext } from "../contexts/AccesibilityContext";
 import * as THREE from "three";
 import { theme } from "../utils/theme/ThemeProviderWrapper";
 import MarkerTooltip from "../ui/MarkerTooltip";
+// import { useFrame } from "@react-three/fiber";
 
 export default function GLBViewer({
   model,
@@ -41,8 +42,8 @@ export default function GLBViewer({
       <OrbitControls
         autoRotate={rotateModel}
         autoRotateSpeed={2}
-        maxDistance={15}
-        minDistance={5}
+        // maxDistance={15}
+        // minDistance={5}
       />
     </Canvas>
   );
@@ -70,6 +71,8 @@ function Model({ model, selectedLayer, onReady }) {
     // });
 
     // Compute bounding box
+    const defaultDirection = new THREE.Vector3(0, 0.5, 1).normalize(); // Camera direction
+
     const box = new THREE.Box3().setFromObject(scene);
     const center = box.getCenter(new THREE.Vector3());
     const size = box.getSize(new THREE.Vector3());
@@ -77,10 +80,13 @@ function Model({ model, selectedLayer, onReady }) {
     const fov = camera.fov * (Math.PI / 180);
     const distance = Math.abs(maxDim / Math.sin(fov / 2));
 
+    // Center the model
     scene.position.sub(center);
-    camera.position.set(0, 1.4, distance / 2);
-    camera.lookAt(0, 0, 0);
 
+    // Set camera position
+    const newPosition = defaultDirection.clone().multiplyScalar(distance * 0.7);
+    camera.position.copy(newPosition);
+    camera.lookAt(0, 0, 0);
     // Restore invisible children
     // invisibleChildren.forEach((child) => scene.add(child));
 
@@ -185,6 +191,10 @@ function CameraController({ zoomLevel }) {
     camera.zoom = zoomLevel;
     camera.updateProjectionMatrix();
   }, [zoomLevel, camera]);
+
+  // useFrame(() => {
+  //   console.log("Camera distance from origin:", camera.position.length());
+  // });
 
   return null;
 }
