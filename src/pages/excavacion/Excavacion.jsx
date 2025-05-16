@@ -46,7 +46,7 @@ export default function Excavacion() {
       <Side title={texts[currentStep].title} body={texts[currentStep].body} />
       <Stack height="100%">
         {/* 3D PLAYER */}
-        <Box position="relative" width="100%" bgcolor="#ddd" height="100%">
+        <Box position="relative" width="100%" bgcolor="#ddd" height="90%">
           {!isPlaying && (
             <Marker
               marker={markers[currentStep]}
@@ -97,7 +97,14 @@ export default function Excavacion() {
         </ToolBoxWrapper> */}
         </Box>
         {/* BUTTONS */}
-        <Box display={"flex"} justifyContent={"center"} p={1} gap={1}>
+        <Box
+          display={"flex"}
+          justifyContent={"center"}
+          alignItems={"center"}
+          p={1}
+          gap={1}
+          height={"10%"}
+        >
           {currentStep === 2 && (
             <Button
               variant="contained"
