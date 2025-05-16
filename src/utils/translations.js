@@ -346,11 +346,12 @@ const translations = {
           markers: [
             {
               id: 1,
-              list: "Decoración ungulada, es decir, hecha con impresiones de los dedos, típica de la tradición alfarera africana",
+              description:
+                "Decoración ungulada, es decir, hecha con impresiones de los dedos, típica de la tradición alfarera africana",
             },
             {
               id: 2,
-              list: "Residuos de los alimentos preparados",
+              description: "Residuos de los alimentos preparados",
             },
           ],
         },
