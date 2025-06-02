@@ -1,19 +1,36 @@
 export const models = [
   {
-    id: 1,
-    url: "/models/botijo.glb",
+    id: 4,
+    url: "/models/embudo.glb",
+    markerScale: 0.7,
+    markers: [
+      {
+        id: 1,
+        position: [-0.3, 0.6, -0.5],
+        image: "/microscopio/17.jpg",
+        imagePOIs: [[65, 38]],
+      },
+    ],
+  },
+  {
+    id: 13,
+    url: "/models/vasija-africana.glb",
     markerScale: 4,
     markers: [
       {
         id: 1,
-        position: [1.7, 5, 1.7],
+        position: [0, 2.2, -4],
+      },
+      {
+        id: 2,
+        position: [0, 1, -3],
       },
     ],
   },
   {
     id: 2,
     url: "/models/botella.glb",
-    markerScale: 1,
+    markerScale: 0.9,
     markers: [
       {
         id: 1,
@@ -30,7 +47,7 @@ export const models = [
   {
     id: 3,
     url: "/models/cepillo.glb",
-    markerScale: 1.4,
+    markerScale: 1.2,
     markers: [
       {
         id: 1,
@@ -41,79 +58,52 @@ export const models = [
     ],
   },
   {
-    id: 4,
-    url: "/models/embudo.glb",
-    markerScale: 0.9,
+    id: 10,
+    url: "/models/escudilla.glb",
+    markerScale: 5,
     markers: [
       {
         id: 1,
-        position: [-0.3, 0.6, -0.5],
-        image: "/microscopio/15.jpg",
-        imagePOIs: [[25, 40]],
-      },
-    ],
-  },
-  {
-    id: 5,
-    url: "/models/plato.glb",
-    markerScale: 10,
-    markers: [
-      {
-        id: 1,
-        image: "/microscopio/11.jpg",
-        imagePOIs: [[10, 50]],
-        position: [0, 2, -23],
+        position: [2.2, -3, -2.2],
+        image: "/microscopio/8.jpg",
       },
       {
         id: 2,
-        image: "/microscopio/12.jpg",
-        imagePOIs: [[20, 50]],
-        position: [0, 1.5, -16],
-      },
-    ],
-  },
-  {
-    id: 6,
-    url: "/models/taza-flores.glb",
-    markerScale: 1.6,
-    markers: [
-      {
-        id: 1,
-        position: [1, 0, -2],
-      },
-    ],
-  },
-  {
-    id: 7,
-    url: "/models/vasinica.glb",
-    markerScale: 0.3,
-    markers: [
-      {
-        id: 1,
-        position: [0, -0.4, 0],
-      },
-    ],
-  },
-  {
-    id: 8,
-    url: "/models/bacin.glb",
-    markerScale: 2.5,
-    markers: [
-      {
-        id: 1,
-        image: "/microscopio/10.jpg",
+        position: [-2.6, 1, -3.5],
         imagePOIs: [
-          [20, 30],
-          [10, 70],
+          [10, 40],
+          [55, 40],
         ],
-        position: [2.5, 0.4, -1],
+
+        image: "/microscopio/9.jpg",
+      },
+    ],
+  },
+  {
+    id: 11,
+    url: "/models/fragmento-ceramica-indigena.glb",
+    markerScale: 0.035,
+    markers: [
+      {
+        id: 1,
+        position: [0.01, 0.03, -0.01],
+      },
+      {
+        id: 2,
+        position: [0.01, 0.03, 0.03],
+        image: "/microscopio/5.jpg",
+        imagePOIs: [[40, 65]],
+      },
+      {
+        id: 3,
+        position: [0.07, -0.015, 0.02],
       },
     ],
   },
   {
     id: 9,
     url: "/models/budare.glb",
-    markerScale: 3,
+    markerScale: 4,
     markers: [
       {
         id: 1,
@@ -145,48 +135,77 @@ export const models = [
     ],
   },
   {
-    id: 10,
-    url: "/models/escudilla.glb",
-    markerScale: 5,
+    id: 6,
+    url: "/models/taza-flores.glb",
+    markerScale: 1.4,
     markers: [
       {
         id: 1,
-        position: [2.2, -3, -2.2],
-        image: "/microscopio/8.jpg",
-      },
-      {
-        id: 2,
-        position: [0, -1, 0],
-        imagePOIs: [
-          [10, 40],
-          [55, 40],
-        ],
-
-        image: "/microscopio/9.jpg",
+        position: [1, 0, -2],
       },
     ],
   },
   {
-    id: 11,
-    url: "/models/fragmento-ceramica-indigena.glb",
-    markerScale: 0.05,
+    id: 8,
+    url: "/models/bacin.glb",
+    markerScale: 2.1,
     markers: [
       {
         id: 1,
-        position: [0.01, 0.03, -0.01],
+        image: "/microscopio/10.jpg",
+        imagePOIs: [
+          [20, 30],
+          [10, 70],
+        ],
+        position: [2.5, 0.4, -1],
+      },
+    ],
+  },
+  {
+    id: 7,
+    url: "/models/vasinica.glb",
+    markerScale: 0.17,
+    markers: [
+      {
+        id: 1,
+        position: [0, -0.4, -0.05],
+      },
+    ],
+  },
+  {
+    id: 1,
+    url: "/models/botijo.glb",
+    markerScale: 3,
+    markers: [
+      {
+        id: 1,
+        position: [1.7, 5, 1.7],
+      },
+    ],
+  },
+  {
+    id: 5,
+    url: "/models/plato.glb",
+    markerScale: 10.5,
+    markers: [
+      {
+        id: 1,
+        image: "/microscopio/11.jpg",
+        imagePOIs: [[10, 50]],
+        position: [0, 2, -23],
       },
       {
         id: 2,
-        position: [0.01, 0.03, 0.03],
-        image: "/microscopio/5.jpg",
-        imagePOIs: [[40, 65]],
+        image: "/microscopio/12.jpg",
+        imagePOIs: [[20, 50]],
+        position: [0, 1.5, -16],
       },
     ],
   },
   {
     id: 12,
     url: "/models/litico.glb",
-    markerScale: 1.5,
+    markerScale: 1.2,
     markers: [
       {
         id: 1,
@@ -199,21 +218,6 @@ export const models = [
         position: [0, 0.5, -2],
         image: "/microscopio/7.jpg",
         imagePOIs: [[60, 40]],
-      },
-    ],
-  },
-  {
-    id: 13,
-    url: "/models/vasija-africana.glb",
-    markerScale: 5,
-    markers: [
-      {
-        id: 1,
-        position: [0, 2.2, -4],
-      },
-      {
-        id: 2,
-        position: [0, 2, -2],
       },
     ],
   },

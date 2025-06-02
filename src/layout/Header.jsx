@@ -34,7 +34,7 @@ export default function Header() {
         alignItems: "center",
         gap: 2,
         boxShadow: "0 8px 8px -8px rgba(0, 0, 0, 0.1)",
-        zIndex: 999999999999999,
+        zIndex: 10000,
       }}
     >
       <Box sx={{ width: "25%" }}>

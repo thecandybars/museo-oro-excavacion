@@ -50,7 +50,7 @@ export default function MarkerTooltip({
   const renderImage = (
     <img
       src={image}
-      width="480px"
+      width="100%"
       height="auto"
       style={{
         borderRadius: "8px",
@@ -110,18 +110,21 @@ export default function MarkerTooltip({
     <Box
       sx={{
         position: "absolute",
-        top: "100%", // Positions the box below the marker
-        left: "100%",
-        width: "400px",
+        top: "-500%", // Positions the box relative to the marker
+        left: "120%",
+        width: image ? "650px" : "300px",
         height: "auto",
-        filter: "opacity(0.9)",
+        zIndex: 100,
+        // filter: "opacity(0.9)",
       }}
       onClick={onClose}
     >
       <Paper elevation={4} bgcolor="white">
         <Box display={"flex"} justifyContent={"flex-end"}>
           <CloseIcon
+            fontSize="large"
             sx={{
+              zIndex: 100,
               position: image ? "absolute" : "relative",
               top: "5px",
               right: "5px",
@@ -129,7 +132,6 @@ export default function MarkerTooltip({
               color: theme.palette.primary.main,
               bgcolor: "white",
               borderRadius: "100%",
-              zIndex: 1000,
             }}
           />
         </Box>

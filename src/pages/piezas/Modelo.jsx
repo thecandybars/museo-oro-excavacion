@@ -3,7 +3,7 @@ import GLBViewer from "../../glbViewer/GLBViewer";
 import ToolBoxWrapper from "../../ui/MapToolbox/ToolboxWrapper";
 import { Button } from "@mui/material";
 import { useContext, useState } from "react";
-import { Rotate3D, Light3D } from "../../utils/icons";
+import { Rotate3D } from "../../utils/icons";
 import ZoomButton3D from "../../ui/MapToolbox/ZoomButton3D";
 import { theme } from "../../utils/theme/ThemeProviderWrapper";
 import uno from "/1.svg";
@@ -15,10 +15,9 @@ import { LanguageContext } from "../../contexts/LanguageContext";
 import PageWrapper from "../../ui/PageWrapper";
 import Side from "./Side";
 import { models } from "./models";
-// import MarkerTooltip3D from "../../ui/MarkerTooltip3D";
+
 export default function Modelo() {
   const [rotateModel, setRotateModel] = useState(false);
-  const [turnLight, setTurnLight] = useState(true);
   const [zoomLevel, setZoomLevel] = useState(1);
   const { lang } = useContext(LanguageContext);
   const t = translations[lang].piezas.modelos;
@@ -110,7 +109,7 @@ export default function Modelo() {
           <GLBViewer
             model={selectedModel}
             rotateModel={rotateModel}
-            turnLight={turnLight}
+            turnLight={true}
             zoomLevel={zoomLevel}
             selectedLayer={modelLayers[selectedLayer].name}
             onReady={() => setIsReady(true)}
@@ -137,7 +136,7 @@ export default function Modelo() {
             >
               <Rotate3D />
             </Button>
-            <Button
+            {/* <Button
               variant="contained"
               color="primary"
               onClick={() => setTurnLight((prev) => !prev)}
@@ -152,7 +151,7 @@ export default function Modelo() {
               }}
             >
               <Light3D />
-            </Button>
+            </Button> */}
             <Button
               color="primary"
               onClick={() => setSelectedLayer((prev) => (prev + 1) % 3)}

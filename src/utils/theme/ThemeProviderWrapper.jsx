@@ -24,7 +24,7 @@ export const theme = {
 };
 export default function ThemeProviderWrapper({ children }) {
   const { fontScale } = useContext(AccesibilityContext);
-  const fontScaler = fontScale ? 1.7 : 1;
+  const fontScaler = fontScale ? 1.7 : 1.2;
   // MUI THEME
   const muiTheme = useMemo(
     () =>
@@ -52,8 +52,8 @@ export default function ThemeProviderWrapper({ children }) {
           },
           h3: {
             fontFamily: "Fugue Regular",
-            fontWeight: 400,
-            fontSize: `${1.3 * fontScaler}rem`,
+            fontWeight: 700,
+            fontSize: `${1.5 * fontScaler}rem`,
           },
           h4: {
             fontFamily: "Fugue Regular",

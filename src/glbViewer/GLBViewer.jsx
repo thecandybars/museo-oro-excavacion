@@ -29,10 +29,14 @@ export default function GLBViewer({
   return (
     <Canvas style={{ filter: highContrast ? "invert(1)" : "none" }}>
       <CameraController zoomLevel={zoomLevel} />
-      <ambientLight intensity={turnLight ? 2.1 : 1.2} />
+      <ambientLight intensity={turnLight ? 2 : 1.2} />
       <directionalLight
-        position={[5, 50, 5]}
-        intensity={turnLight ? 0.8 : 0.2}
+        position={[100, 100, 1000]}
+        intensity={turnLight ? 2 : 0.2}
+      />
+      <directionalLight
+        position={[100, 100, -1000]}
+        intensity={turnLight ? 2 : 0.2}
       />
       <Model
         model={model}

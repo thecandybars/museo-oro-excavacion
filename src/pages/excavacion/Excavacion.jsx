@@ -190,12 +190,13 @@ const Marker = ({ marker, text }) => {
               borderRadius: "100%",
               border: `3px solid ${theme.palette.primary.dark}`,
               bgcolor: theme.palette.primary.translucid,
+              width: "100%",
+              height: "100%",
             }}
             display={"flex"}
             justifyContent="center"
-            alignItems="center"
+            alignItems="baseline"
             onClick={() => setOpenDialog(true)}
-            // style={{ ...style }}
           >
             <Typography variant="h6">{text?.caption || ""}</Typography>
           </Box>

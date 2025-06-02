@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { Box, Button, Stack } from "@mui/material";
 import { Outlet } from "react-router";
 import Header from "./Header";
@@ -20,11 +21,11 @@ export default function Layout() {
       }}
     >
       <Header />
-      <Box position="absolute" bottom={0} left={0} px={4} py={2}>
+      {/* <Box position="absolute" bottom={0} left={0} px={4} py={2}>
         <Button variant="outlined" sx={{ borderRadius: 100 }}>
           <CreditosIcon />
         </Button>
-      </Box>
+      </Box> */}
       <Outlet />
     </Stack>
   );

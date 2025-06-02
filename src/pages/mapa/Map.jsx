@@ -23,24 +23,20 @@ export default function Mapa() {
   const markers = [
     {
       id: 0,
-      image: "/mapa_t2.jpeg",
-      position: { x: 44, y: 36 },
+      image: "/mapa_poi01.jpg",
+      position: { x: 44.5, y: 36.5 },
       positionTooltip: { x: 43, y: 20 },
-      imagePOIs: [
-        [50, 40],
-        [75, 10],
-      ],
     },
     {
       id: 1,
-      image: "/mapa_t1_0.jpeg",
-      position: { x: 35.2, y: 36 },
+      image: "/mapa_poi02.jpg",
+      position: { x: 38.5, y: 36 },
       positionTooltip: { x: 35, y: 20 },
     },
     {
       id: 2,
-      image: "/mapa_t1_1.jpeg",
-      position: { x: 37.5, y: 35.5 },
+      image: "/mapa_poi03.jpeg",
+      position: { x: 37.5, y: 39 },
       positionTooltip: { x: 35, y: 20 },
       imagePOIs: [
         [90, 30],
@@ -49,7 +45,7 @@ export default function Mapa() {
     },
     {
       id: 3,
-      image: "/mapa_t1_2.jpeg",
+      image: "/mapa_poi04.jpeg",
       imagePOIs: [
         [11, 1],
         [40, 1],
@@ -57,7 +53,7 @@ export default function Mapa() {
         [90, 50],
         [45, 60],
       ],
-      position: { x: 40, y: 33 },
+      position: { x: 40.3, y: 34 },
       positionTooltip: { x: 43, y: 20 },
       path: "/excavacion",
     },
@@ -111,7 +107,7 @@ export default function Mapa() {
               style={{
                 width: "100%",
                 display: "block",
-                zIndex: -1,
+                zIndex: 1,
                 filter: highContrast ? "invert(100%)" : "none",
               }}
             />

@@ -30,10 +30,13 @@ const GLBScene = forwardRef(function GLBScene(
   }, [animations, scene]);
 
   useFrame((state, delta) => {
+    // console.log("🚀 ~ useFrame ~ state:", state);
     const glbCamera = scene.getObjectByName("Camera");
+    console.log("🚀 ~ useFrame ~ glbCamera:", glbCamera);
     if (glbCamera) {
       state.camera.position.copy(glbCamera.position);
       state.camera.quaternion.copy(glbCamera.quaternion);
+      state.camera.updateProjectionMatrix();
     }
 
     if (mixer.current && action.current && isPlaying) {

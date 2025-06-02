@@ -11,9 +11,10 @@ const translations = {
     },
     inicio: {
       titulo: "Secretos de una casa cartagenera",
+      subtitulo:
+        "Vive esta experiencia arqueológica. Aquí encontrarás historias sobre…",
       indice: [
         "La ciudad colonial",
-        // "La casa colonial",
         "Excavaciones en la casa",
         "Cosas del pasado",
       ],
@@ -52,7 +53,6 @@ const translations = {
           title: "Modelo del muelle de Cartagena, 1571",
           description:
             "La Plaza Real, hoy Plaza de la Aduana, era el centro del comercio en donde se subastaban personas africanas para ser esclavizadas y se ofertaban mercancías. El comercio de personas estuvo amparado en el principio de la propiedad de un ser humano sobre el otro y sobre su descendencia. Esta plaza, al igual que la conocida hoy como del Reloj, ha sido testigo de la trata y explotación de personas a lo largo del tiempo.",
-          list: "Plaza Real.Carniceria",
         },
         {
           id: 1,
@@ -73,7 +73,7 @@ const translations = {
           caption: "4",
           title: "La manzana del Museo del Oro Zenú durante la toma de Drake",
           list: "Gobernación.Casa del carcelero.Botica.Casa Museo del Oro Zenú.Centros de manzana verdes por las huertas",
-          button: "Visita la casa",
+          button: "Visita la excavación de la casa",
         },
       ],
     },
@@ -145,21 +145,38 @@ const translations = {
     },
 
     piezas: {
-      sideTitle: "Los objetos",
+      sideTitle: "Cosas del pasado",
       sideParagraph:
-        "Explora esta pieza arqueológica en detalle utilizando las herramientas disponibles.",
+        "Arqueólogas y arqueólogos emplean dibujos técnicos y modelos tridimensionales para reconstruir la forma original de los objetos a partir de los fragmentos encontrados en las excavaciones. Los bordes, por ejemplo, permiten proyectar el diámetro de las vasijas, mientras los del cuerpo de los recipientes revelan su configuración. Para obtener información sobre su manufactura y el uso que se les dio, recurren a diversos tipos de microscopios que amplían la imagen hasta varios miles de veces y permiten explorar los detalles del fragmento a nivel microestructural. El análisis macroscópico, hecho con el ojo humano y los demás sentidos, les ayuda a identificar otros aspectos. Explora todos estos niveles de información. ",
       modelos: [
         {
-          id: 1,
-          title: "Botija",
-          sideTitle: "Botija para vino y aceite",
+          id: 4,
+          title: "Embudo",
+          sideTitle: "Embudo inglés del siglo XIX",
           sideParagraph:
-            "Un recipiente popular para contener líquidos en la América colonial fue la botija producida en España.\nVenían en los barcos llenas con vino o aceite de oliva y ayudaban a darle peso a la embarcación. Una vez consumidos estos líquidos, se usaban para guardar el agua para beber u otras bebidas fermentadas.",
-
+            "El diseño azul de este fragmento de embudo fue inicialmente grabado en una plancha de cobre por un artesano. Luego se imprimió en una tinta azul con óxido de cobalto, sobre un papel de seda que se adhirió encima del bizcocho (primera cocción de la loza) recubierto con una capa de esmalte blanco.\nPara darle el vidriado brillante se le aplicó un esmalte transparente y se quemó de nuevo. En este proceso, el diseño se transfería a la pieza.",
           markers: [
             {
               id: 1,
-              description: "Baño de cal superficial precocción",
+              list: "Unión del diseño impreso en el papel",
+            },
+          ],
+        },
+        {
+          id: 13,
+          title: "Olla",
+          sideTitle: "Olla de cocina elaborada por alfareros africanos",
+          sideParagraph:
+            "Parte de las vasijas usadas en las cocinas de la Cartagena colonial fueron elaboradas por personas africanas esclavizadas y “negros libres”.\nEllos abastecieron la continua y creciente demanda de estos utensilios en la ciudad y aportaron con sus tradiciones a las técnicas, formas y decoraciones.",
+          markers: [
+            {
+              id: 1,
+              description:
+                "Decoración ungulada, es decir, hecha con impresiones de los dedos, típica de la tradición alfarera africana",
+            },
+            {
+              id: 2,
+              description: "Residuos de los alimentos preparados",
             },
           ],
         },
@@ -187,101 +204,6 @@ const translations = {
             {
               id: 1,
               list: "Estandarización del tamaño de los orificios como indicador de elaboración industrial",
-            },
-          ],
-        },
-        {
-          id: 4,
-          title: "Embudo",
-          sideTitle: "Embudo inglés del siglo XIX",
-          sideParagraph:
-            "El diseño azul de este fragmento de embudo fue inicialmente grabado en una plancha de cobre por un artesano. Luego se imprimió en una tinta azul con óxido de cobalto, sobre un papel de seda que se adhirió encima del bizcocho (primera cocción de la loza) recubierto con una capa de esmalte blanco.\nPara darle el vidriado brillante se le aplicó un esmalte transparente y se quemó de nuevo. En este proceso, el diseño se transfería a la pieza.",
-          markers: [
-            {
-              id: 1,
-              list: "Unión del diseño impreso en el papel",
-            },
-          ],
-        },
-        {
-          id: 5,
-          title: "Plato",
-          sideTitle: "Plato pando sevillano",
-          sideParagraph:
-            "Este plato del tipo azul sobre azul fue producido en Sevilla, en el barrio de Triana, entre 1550 y 1630. La loza de este tipo buscó imitar tanto la cerámica italiana, como la porcelana china.\nPudo haber sido parte del menaje de la familia Matute, quienes pretendían preservar en América las prácticas de mesa y los gustos hispanos a la hora de consumir sus alimentos.",
-          markers: [
-            {
-              id: 1,
-              list: "Vidriado opaco en dos tonos de azul",
-            },
-            {
-              id: 2,
-              list: "Pasta original quemada antes de aplicar el esmalte (bizcocho)",
-            },
-          ],
-        },
-        {
-          id: 6,
-          title: "Tazón",
-          sideTitle: "Tazón inglés con diseño floral",
-          sideParagraph:
-            "Los fragmentos de loza industrial encontrados en la casa no solo cuentan sobre los gustos de los miembros del hogar.\nTambién revelan las técnicas de producción de diferentes lugares y épocas en Europa, donde los ingleses eran los mayores productores y exportadores, y en menor proporción los franceses, alemanes y españoles.\nEste es un tazón de loza inglesa pintada a mano del siglo XIX.",
-          markers: [
-            {
-              id: 1,
-              description: "Diseños florales pintados a mano",
-            },
-          ],
-        },
-        {
-          id: 7,
-          title: "Basinica",
-          sideTitle: "Bacinica inglesa",
-          sideParagraph:
-            "Esta bacinica decorada con la técnica de transferencia muestra un motivo elaborado tal vez por el artista inglés W.H. Bartlett (1809-1854).\nSon reconocidos sus grabados en acero de paisajes idealizados de la Gran Bretaña, Estados Unidos, Canadá y el Cercano Oriente. Según la decoración y el color, la bacinica fue elaborada a mediados del siglo XIX, en Inglaterra. ",
-          markers: [
-            {
-              id: 1,
-              description:
-                "Para distinguirse, cada fábrica de loza diseñó una o varias marcas, que se imprimían en la base del objeto.",
-            },
-          ],
-        },
-        {
-          id: 8,
-          title: "Bacín",
-          sideTitle: "Bacinica inglesa",
-          sideParagraph:
-            "La idea de higiene durante buena parte del periodo colonial fue distinta a la actual. La orina y heces se depositaban en los bacines, que se mantenían bajo las camas o acomodados en una silla inodoro.\nCuando estos desechos no se vertían en la huerta, en el albañal o en la letrina, eran botados a la calle. Sin lluvias, esta práctica contribuía al ambiente malsano de Cartagena de Indias.",
-          markers: [
-            {
-              id: 1,
-              list: "Superficie vidriada.Pasta cerámica",
-            },
-          ],
-        },
-        {
-          id: 9,
-          title: "Budare",
-          sideTitle: "Fragmento de budare",
-          sideParagraph:
-            "La yuca, planta de origen americano, fue usada desde tiempos prehispánicos para la preparación de casabe o tortillas. Para hacer la masa se rallaba la yuca y se exprimía.\nLuego se extendía y tostaba sobre el budare caliente. Sobre este también se asaban tortillas de maíz y tostaban semillas. Los españoles incorporaron pronto estos alimentos a su dieta y estos utensilios.",
-          markers: [
-            {
-              id: 1,
-              list: "La capa de hollín indica que el budare fue puesto al fuego",
-            },
-            {
-              id: 2,
-              list: "Vitrificación del contenido de silicio por acción del calor",
-            },
-            {
-              id: 3,
-              list: "Veta de corrosión de mineral rico en hierro",
-            },
-            {
-              id: 4,
-              list: "Concreciones de sales formadas por la reacción con el suelo",
             },
           ],
         },
@@ -318,6 +240,107 @@ const translations = {
               id: 2,
               list: "Estas inclusiones de arena que se encuentran en la pasta fueron el desgrasante usado para darle cuerpo a la arcilla",
             },
+            {
+              id: 3,
+              description:
+                "El núcleo oscuro del fragmento cerámico es evidencia de oxidación de materia orgánica de la pasta por un proceso de cocción que no superó los 600°C.",
+            },
+          ],
+        },
+        {
+          id: 9,
+          title: "Budare",
+          sideTitle: "Fragmento de budare",
+          sideParagraph:
+            "La yuca, planta de origen americano, fue usada desde tiempos prehispánicos para la preparación de casabe o tortillas. Para hacer la masa se rallaba la yuca y se exprimía.\nLuego se extendía y tostaba sobre el budare caliente. Sobre este también se asaban tortillas de maíz y tostaban semillas. Los españoles incorporaron pronto estos alimentos a su dieta y estos utensilios.",
+          markers: [
+            {
+              id: 1,
+              list: "La capa de hollín indica que el budare fue puesto al fuego",
+            },
+            {
+              id: 2,
+              list: "Vitrificación del contenido de silicio por acción del calor",
+            },
+            {
+              id: 3,
+              list: "Veta de corrosión de mineral rico en hierro",
+            },
+            {
+              id: 4,
+              list: "Concreciones de sales formadas por la reacción con el suelo",
+            },
+          ],
+        },
+        {
+          id: 6,
+          title: "Tazón",
+          sideTitle: "Tazón inglés con diseño floral",
+          sideParagraph:
+            "Los fragmentos de loza industrial encontrados en la casa no solo cuentan sobre los gustos de los miembros del hogar.\nTambién revelan las técnicas de producción de diferentes lugares y épocas en Europa, donde los ingleses eran los mayores productores y exportadores, y en menor proporción los franceses, alemanes y españoles.\nEste es un tazón de loza inglesa pintada a mano del siglo XIX.",
+          markers: [
+            {
+              id: 1,
+              description: "Diseños florales pintados a mano",
+            },
+          ],
+        },
+        {
+          id: 8,
+          title: "Bacín",
+          sideTitle: "Bacin",
+          sideParagraph:
+            "La idea de higiene durante buena parte del periodo colonial fue distinta a la actual. La orina y heces se depositaban en los bacines, que se mantenían bajo las camas o acomodados en una silla inodoro.\nCuando estos desechos no se vertían en la huerta, en el albañal o en la letrina, eran botados a la calle. Sin lluvias, esta práctica contribuía al ambiente malsano de Cartagena de Indias.",
+          markers: [
+            {
+              id: 1,
+              list: "Superficie vidriada.Pasta cerámica",
+            },
+          ],
+        },
+        {
+          id: 7,
+          title: "Bacinica",
+          sideTitle: "Bacinica inglesa",
+          sideParagraph:
+            "Esta bacinica decorada con la técnica de transferencia muestra un motivo elaborado tal vez por el artista inglés W.H. Bartlett (1809-1854).\nSon reconocidos sus grabados en acero de paisajes idealizados de la Gran Bretaña, Estados Unidos, Canadá y el Cercano Oriente. Según la decoración y el color, la bacinica fue elaborada a mediados del siglo XIX, en Inglaterra. ",
+          markers: [
+            {
+              id: 1,
+              description:
+                "Para distinguirse, cada fábrica de loza diseñó una o varias marcas, que se imprimían en la base del objeto.",
+            },
+          ],
+        },
+        {
+          id: 1,
+          title: "Botija",
+          sideTitle: "Botija para vino y aceite",
+          sideParagraph:
+            "Un recipiente popular para contener líquidos en la América colonial fue la botija producida en España.\nVenían en los barcos llenas con vino o aceite de oliva y ayudaban a darle peso a la embarcación. Una vez consumidos estos líquidos, se usaban para guardar el agua para beber u otras bebidas fermentadas.",
+
+          markers: [
+            {
+              id: 1,
+              description: "Baño de cal superficial precocción",
+            },
+          ],
+        },
+        {
+          id: 5,
+          title: "Plato",
+          sideTitle: "Plato pando sevillano",
+          sideParagraph:
+            "Este plato del tipo azul sobre azul fue producido en Sevilla, en el barrio de Triana, entre 1550 y 1630. La loza de este tipo buscó imitar tanto la cerámica italiana, como la porcelana china.\nPudo haber sido parte del menaje de la familia Matute, quienes pretendían preservar en América las prácticas de mesa y los gustos hispanos a la hora de consumir sus alimentos.",
+          markers: [
+            {
+              id: 1,
+              list: "Vidriado opaco en dos tonos de azul",
+            },
+            {
+              id: 2,
+              list: "Pasta original quemada antes de aplicar el esmalte (bizcocho)",
+            },
           ],
         },
         {
@@ -334,24 +357,6 @@ const translations = {
             {
               id: 2,
               list: "El filo cortante fue obtenido por la técnica de presión aplicada en ambos lados",
-            },
-          ],
-        },
-        {
-          id: 13,
-          title: "Olla",
-          sideTitle: "Olla de cocina elaborada por alfareros africanos",
-          sideParagraph:
-            "Parte de las vasijas usadas en las cocinas de la Cartagena colonial fueron elaboradas por personas africanas esclavizadas y “negros libres”.\nEllos abastecieron la continua y creciente demanda de estos utensilios en la ciudad y aportaron con sus tradiciones a las técnicas, formas y decoraciones.",
-          markers: [
-            {
-              id: 1,
-              description:
-                "Decoración ungulada, es decir, hecha con impresiones de los dedos, típica de la tradición alfarera africana",
-            },
-            {
-              id: 2,
-              description: "Residuos de los alimentos preparados",
             },
           ],
         },
