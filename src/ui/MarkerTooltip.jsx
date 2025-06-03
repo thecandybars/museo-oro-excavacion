@@ -82,7 +82,7 @@ export default function MarkerTooltip({
 
   const listFormatted =
     list &&
-    list.split(".").map((text, index) => (
+    list.split("#").map((text, index) => (
       <Box
         key={index}
         display={"flex"}

@@ -23,29 +23,7 @@ const translations = {
     map: {
       sideTitle: "La ciudad colonial",
       sideParagraph:
-        "Cartagena fue construida en territorios de indígenas malibúes asentados en la bahía. En 1533 Pedro de Heredia fundó la ciudad puerto en este lugar, a pesar de la escasez de agua para el consumo y por las ventajas que brindaba el lugar para la llegada de las embarcaciones y la defensa de la ciudad.\nExisten muchos planos de la ciudad que permiten conocer sus transformaciones a lo largo de los siglos. Este plano muestra a Cartagena y su entorno en 1586, cuando es sitiada y saqueada por el corsario Francis Drake. Explora con la lupa las manzanas y las casas.",
-      sideBibliography: {
-        title: "Bibliografia",
-        books: [
-          {
-            title:
-              "Historia de Cartagena de Indias durante la dominación española",
-            author: "Gabriel Porras Troconis",
-            footer: "Biblioteca Nacional de Colombia, 1954",
-          },
-          {
-            title:
-              "Cartagena de Indias: Ciudad y puerto durante el periodo colonial",
-            author: "Carmen Borrego Plá",
-            footer: "Editorial Escuela de Estudios Hispanoamericanos, 1983",
-          },
-          {
-            title: "El Caribe colombiano en la historia colonial",
-            author: "Alfonso Múnera",
-            footer: "El Áncora Editores, 1998",
-          },
-        ],
-      },
+        "Cartagena fue construida en territorios de indígenas malibúes asentados en la bahía. En 1533 Pedro de Heredia fundó la ciudad puerto en este lugar, a pesar de la escasez de agua para el consumo y por las ventajas que brindaba el lugar para la llegada de las embarcaciones y la defensa de la ciudad.\nExisten muchos planos de la ciudad que permiten conocer sus transformaciones a lo largo de los siglos. Este plano muestra a Cartagena y su entorno en 1586, cuando es sitiada y saqueada por el corsario Francis Drake.\nExplora algunos sitios de interés en la ciudad colonial.",
       markers: [
         {
           id: 0,
@@ -66,50 +44,14 @@ const translations = {
           caption: "3",
           description:
             "En 1570, Cartagena tenía cerca de 400 casas construidas en piedra y en bahareque. Un incendio de 1552 había destruido las construcciones en palma y caña. En el ataque de Drake de 1586, la ciudad pierde de nuevo la mitad de sus casas. Por orden del cabildo, los propietarios fueron obligados a reconstruirlas en mampostería (piedra y ladrillo).",
-          list: "Casas con fachadas de cal.Casas de bahareque o madera",
+          list: "Casas con fachadas de cal#Casas de bahareque o madera",
         },
         {
           id: 3,
           caption: "4",
           title: "La manzana del Museo del Oro Zenú durante la toma de Drake",
-          list: "Gobernación.Casa del carcelero.Botica.Casa Museo del Oro Zenú.Centros de manzana verdes por las huertas",
+          list: "Gobernación#Casa del carcelero#Botica#Casa Museo del Oro Zenú#Centros de manzana verdes por las huertas",
           button: "Visita la excavación de la casa",
-        },
-      ],
-    },
-    casa: {
-      sideTitle: "Casa Colonial",
-      sideParagraph:
-        "Explora el mapa de esta casa colonial de los siglos XVII - XVIII. Haz clic en los puntos de interés para obtener más información sobre cada área.",
-      sideBibliography: {
-        title: "Bibliografia",
-        books: [
-          {
-            title:
-              "Historia de Cartagena de Indias durante la dominación española",
-            author: "Gabriel Porras Troconis",
-            footer: "Biblioteca Nacional de Colombia, 1954",
-          },
-          {
-            title:
-              "Cartagena de Indias: Ciudad y puerto durante el periodo colonial",
-            author: "Carmen Borrego Plá",
-            footer: "Editorial Escuela de Estudios Hispanoamericanos, 1983",
-          },
-          {
-            title: "El Caribe colombiano en la historia colonial",
-            author: "Alfonso Múnera",
-            footer: "El Áncora Editores, 1998",
-          },
-        ],
-      },
-      markers: [
-        {
-          caption: "1",
-          title: "Aljibe",
-          description:
-            "Depósito de agua subterráneo típico de las casas coloniales.",
-          button: "Ver excavacion",
         },
       ],
     },
@@ -125,7 +67,6 @@ const translations = {
             "El albañal, construido cerca de la cocina y del aljibe, sirvió como desagüe de las aguas sucias producto de las actividades domésticas.\nLa excavación arqueológica mostró en esta área una alteración de las capas de suelo causada por la construcción del aljibe. En estas capas se encontraron objetos de la vida cotidiana indígena.",
           description:
             "Este es el dibujo arqueológico de un perfil estratigráfico. Cada estrato o nivel es un depósito de actividades de una ocupación humana o de un evento natural. Aquí los estratos están revueltos.",
-          button: "Cerrar",
         },
         {
           caption: "2",
@@ -143,11 +84,10 @@ const translations = {
         reset: "Reiniciar exploración",
       },
     },
-
     piezas: {
       sideTitle: "Cosas del pasado",
       sideParagraph:
-        "Arqueólogas y arqueólogos emplean dibujos técnicos y modelos tridimensionales para reconstruir la forma original de los objetos a partir de los fragmentos encontrados en las excavaciones. Los bordes, por ejemplo, permiten proyectar el diámetro de las vasijas, mientras los del cuerpo de los recipientes revelan su configuración. Para obtener información sobre su manufactura y el uso que se les dio, recurren a diversos tipos de microscopios que amplían la imagen hasta varios miles de veces y permiten explorar los detalles del fragmento a nivel microestructural. El análisis macroscópico, hecho con el ojo humano y los demás sentidos, les ayuda a identificar otros aspectos. Explora todos estos niveles de información. ",
+        "Arqueólogas y arqueólogos emplean dibujos técnicos y modelos tridimensionales para reconstruir la forma original de los objetos a partir de los fragmentos encontrados en las excavaciones. Los bordes, por ejemplo, permiten proyectar el diámetro de las vasijas, mientras los del cuerpo de los recipientes revelan su configuración.\nPara obtener información sobre su manufactura y el uso que se les dio, recurren a diversos tipos de microscopios que amplían la imagen hasta varios miles de veces y permiten explorar los detalles del fragmento a nivel microestructural. El análisis macroscópico, hecho con el ojo humano y los demás sentidos, les ayuda a identificar otros aspectos.\nExplora todos estos niveles de información. ",
       modelos: [
         {
           id: 4,
@@ -172,11 +112,11 @@ const translations = {
             {
               id: 1,
               description:
-                "Decoración ungulada, es decir, hecha con impresiones de los dedos, típica de la tradición alfarera africana",
+                "Decoración ungulada, es decir, hecha con impresiones de los dedos, típica de la tradición alfarera africana.",
             },
             {
               id: 2,
-              description: "Residuos de los alimentos preparados",
+              description: "Residuos de los alimentos preparados.",
             },
           ],
         },
@@ -189,8 +129,7 @@ const translations = {
           markers: [
             {
               id: 1,
-              title: "Marcas en la botella",
-              list: "Comercializadores del medicamento: Curtis es el yerno de la señora Winslow y Perkins, su socio.El nombre del medicamento se toma de la médica Charlotte Winslow, suegra de Curtis; al asociarse a una mujer le daba un aire de confianza maternal al jarabe.Nombre de la compañía farmacéutica",
+              list: "Comercializadores del medicamento: Curtis es el yerno de la señora Winslow y Perkins, su socio#El nombre del medicamento se toma de la médica Charlotte N. Winslow, suegra de Curtis#Al asociarse a una mujer le daba un aire de confianza maternal al jarabe#Nombre de la compañía farmacéutica",
             },
           ],
         },
@@ -199,11 +138,11 @@ const translations = {
           title: "Cepillo",
           sideTitle: "Cepillo de dientes en hueso",
           sideParagraph:
-            "Los cepillos de dientes de hueso y pelo animal se usaron en Europa desde el siglo XVII, cuando era considerado un objeto de lujo, hasta entrado el siglo XX.\nLos mayores productores de estos cepillos fueron Inglaterra, Alemania, Francia y Japón. Su producción solo se masificó con la invención de la máquina perforadora en 1870.",
+            "Los cepillos de dientes de hueso y pelo animal se usaron en Europa desde el siglo XVII, cuando era considerado un objeto de lujo, hasta entrado el siglo XX. Los mayores productores de estos cepillos fueron Inglaterra, Alemania, Francia y Japón. Su producción solo se masificó con la invención de la máquina perforadora en 1870.",
           markers: [
             {
               id: 1,
-              list: "Estandarización del tamaño de los orificios como indicador de elaboración industrial",
+              list: "Estandarización del tamaño de los orificios como indicador de elaboración industrial.",
             },
           ],
         },
@@ -212,33 +151,33 @@ const translations = {
           title: "Escudilla",
           sideTitle: "Escudilla española",
           sideParagraph:
-            "Las escudillas se usaban para servir sopas, caldos o potajes que se tomaban con cuchara o sorbidos. Esta es del tipo conocido como Columbia liso, una mayólica española producida entre 1490 y 1550.\nSu superficie vidriada brillante se obtenía con el uso del plomo triturado y el color blanco, con el estaño. Esta última técnica fue introducida en España por los árabes.",
+            "Las escudillas se usaban para servir sopas, caldos o potajes que se tomaban con cuchara o sorbidos. Esta es del tipo conocido como Columbia liso, una mayólica española producida entre 1490 y 1550. Su superficie vidriada brillante se obtenía con el uso del plomo triturado y el color blanco, con el estaño. Esta última técnica fue introducida en España por los árabes.",
           markers: [
             {
               id: 1,
               description:
-                "Vidriado externo erosionado por el contacto con el suelo donde estuvo enterrada la escudilla",
+                "Vidriado externo erosionado por el contacto con el suelo donde estuvo enterrada la escudilla.",
             },
             {
               id: 2,
-              list: "El vidriado en la superficie interior es más grueso y se preservó mejor.Pasta cerámica de la escudilla",
+              list: "El vidriado en la superficie interior es más grueso y se preservó mejor#Pasta cerámica de la escudilla.",
             },
           ],
         },
         {
           id: 11,
           title: "Fragmento de cerámica indígena",
-          sideTitle: "Fragmento de cerámica indígena tipo Crespo",
+          sideTitle: "fragmento de cerámica indígena tipo Crespo",
           sideParagraph:
-            "La decoración, el color y el material de este fragmento permiten asociarlo al tipo cerámico Crespo definido por la arqueóloga Alicia Dussán.\nEsta alfarería indígena se ha encontrado en contextos datados desde tiempos prehispánicos hasta entrado el siglo XIX, como testimonio de la continuidad de las tradiciones cerámicas locales después de la invasión española.",
+            "La decoración, el color y el material de este fragmento permiten asociarlo al tipo cerámico Crespo definido por la arqueóloga Alicia Dussán. Esta alfarería indígena se ha encontrado en contextos datados desde tiempos prehispánicos hasta entrado el siglo XIX, como testimonio de la continuidad de las tradiciones cerámicas locales después de la invasión española. ",
           markers: [
             {
               id: 1,
-              description: "Decoración incisa en forma de V y puntos",
+              description: "Decoración incisa en forma de V y puntos.",
             },
             {
               id: 2,
-              list: "Estas inclusiones de arena que se encuentran en la pasta fueron el desgrasante usado para darle cuerpo a la arcilla",
+              list: "Estas inclusiones de arena que se encuentran en la pasta fueron el desgrasante usado para darle cuerpo a la arcilla.",
             },
             {
               id: 3,
@@ -252,23 +191,23 @@ const translations = {
           title: "Budare",
           sideTitle: "Fragmento de budare",
           sideParagraph:
-            "La yuca, planta de origen americano, fue usada desde tiempos prehispánicos para la preparación de casabe o tortillas. Para hacer la masa se rallaba la yuca y se exprimía.\nLuego se extendía y tostaba sobre el budare caliente. Sobre este también se asaban tortillas de maíz y tostaban semillas. Los españoles incorporaron pronto estos alimentos a su dieta y estos utensilios.",
+            "La yuca, planta de origen americano, fue usada desde tiempos prehispánicos para la preparación de casabe o tortillas. Para hacer la masa se rallaba la yuca y se exprimía. Luego se extendía y tostaba sobre el budare caliente. Sobre este también se asaban tortillas de maíz y tostaban semillas. Los españoles incorporaron pronto estos alimentos a su dieta y estos utensilios.",
           markers: [
             {
               id: 1,
-              list: "La capa de hollín indica que el budare fue puesto al fuego",
+              list: "La capa de hollín indica que el budare fue puesto al fuego.",
             },
             {
               id: 2,
-              list: "Vitrificación del contenido de silicio por acción del calor",
+              list: "Vitrificación del contenido de silicio por acción del calor.",
             },
             {
               id: 3,
-              list: "Veta de corrosión de mineral rico en hierro",
+              list: "Veta de corrosión de mineral rico en hierro.",
             },
             {
               id: 4,
-              list: "Concreciones de sales formadas por la reacción con el suelo",
+              list: "Concreciones de sales formadas por la reacción con el suelo.",
             },
           ],
         },
@@ -277,11 +216,11 @@ const translations = {
           title: "Tazón",
           sideTitle: "Tazón inglés con diseño floral",
           sideParagraph:
-            "Los fragmentos de loza industrial encontrados en la casa no solo cuentan sobre los gustos de los miembros del hogar.\nTambién revelan las técnicas de producción de diferentes lugares y épocas en Europa, donde los ingleses eran los mayores productores y exportadores, y en menor proporción los franceses, alemanes y españoles.\nEste es un tazón de loza inglesa pintada a mano del siglo XIX.",
+            "Los fragmentos de loza industrial encontrados en la casa no solo cuentan sobre los gustos de los miembros del hogar. También revelan las técnicas de producción de diferentes lugares y épocas en Europa, donde los ingleses eran los mayores productores y exportadores, y en menor proporción los franceses, alemanes y españoles.\nEste es un tazón de loza inglesa pintada a mano del siglo XIX.",
           markers: [
             {
               id: 1,
-              description: "Diseños florales pintados a mano",
+              description: "Diseños florales pintados a mano.",
             },
           ],
         },
@@ -290,20 +229,20 @@ const translations = {
           title: "Bacín",
           sideTitle: "Bacin",
           sideParagraph:
-            "La idea de higiene durante buena parte del periodo colonial fue distinta a la actual. La orina y heces se depositaban en los bacines, que se mantenían bajo las camas o acomodados en una silla inodoro.\nCuando estos desechos no se vertían en la huerta, en el albañal o en la letrina, eran botados a la calle. Sin lluvias, esta práctica contribuía al ambiente malsano de Cartagena de Indias.",
+            "La idea de higiene durante buena parte del periodo colonial fue distinta a la actual. La orina y heces se depositaban en los bacines, que se mantenían bajo las camas o acomodados en una silla inodoro. Cuando estos desechos no se vertían en la huerta, en el albañal o en la letrina, eran botados a la calle. Sin lluvias, esta práctica contribuía al ambiente malsano de Cartagena de Indias.",
           markers: [
             {
               id: 1,
-              list: "Superficie vidriada.Pasta cerámica",
+              list: "Superficie vidriada#Pasta cerámica",
             },
           ],
         },
         {
           id: 7,
-          title: "Bacinica",
+          title: "Bacinica inglesa",
           sideTitle: "Bacinica inglesa",
           sideParagraph:
-            "Esta bacinica decorada con la técnica de transferencia muestra un motivo elaborado tal vez por el artista inglés W.H. Bartlett (1809-1854).\nSon reconocidos sus grabados en acero de paisajes idealizados de la Gran Bretaña, Estados Unidos, Canadá y el Cercano Oriente. Según la decoración y el color, la bacinica fue elaborada a mediados del siglo XIX, en Inglaterra. ",
+            "Esta bacinica decorada con la técnica de transferencia muestra un motivo elaborado tal vez por el artista inglés W.H. Bartlett (1809-1854). Son reconocidos sus grabados en acero de paisajes idealizados de la Gran Bretaña, Estados Unidos, Canadá y el Cercano Oriente. Según la decoración y el color, la bacinica fue elaborada a mediados del siglo XIX, en Inglaterra.",
           markers: [
             {
               id: 1,
@@ -317,7 +256,7 @@ const translations = {
           title: "Botija",
           sideTitle: "Botija para vino y aceite",
           sideParagraph:
-            "Un recipiente popular para contener líquidos en la América colonial fue la botija producida en España.\nVenían en los barcos llenas con vino o aceite de oliva y ayudaban a darle peso a la embarcación. Una vez consumidos estos líquidos, se usaban para guardar el agua para beber u otras bebidas fermentadas.",
+            "Un recipiente popular para contener líquidos en la América colonial fue la botija producida en España. Venían en los barcos llenas con vino o aceite de oliva y ayudaban a darle peso a la embarcación. Una vez consumidos estos líquidos, se usaban para guardar el agua para beber u otras bebidas fermentadas.",
 
           markers: [
             {
@@ -331,15 +270,15 @@ const translations = {
           title: "Plato",
           sideTitle: "Plato pando sevillano",
           sideParagraph:
-            "Este plato del tipo azul sobre azul fue producido en Sevilla, en el barrio de Triana, entre 1550 y 1630. La loza de este tipo buscó imitar tanto la cerámica italiana, como la porcelana china.\nPudo haber sido parte del menaje de la familia Matute, quienes pretendían preservar en América las prácticas de mesa y los gustos hispanos a la hora de consumir sus alimentos.",
+            "Este plato del tipo azul sobre azul fue producido en Sevilla, en el barrio de Triana, entre 1550 y 1630. La loza de este tipo buscó imitar tanto la cerámica italiana, como la porcelana china.\nPudo haber sido parte del menaje de la familia Matute, quienes pretendían preservar en América las prácticas de mesa y los gustos hispanos a la hora de consumir sus alimentos. ",
           markers: [
             {
               id: 1,
-              list: "Vidriado opaco en dos tonos de azul",
+              list: "Vidriado opaco en dos tonos de azul.",
             },
             {
               id: 2,
-              list: "Pasta original quemada antes de aplicar el esmalte (bizcocho)",
+              list: "Pasta original quemada antes de aplicar el esmalte (bizcocho).",
             },
           ],
         },
@@ -348,15 +287,15 @@ const translations = {
           title: "Raspador",
           sideTitle: "Raspador de piedra",
           sideParagraph:
-            "Los indígenas usaron la piedra para elaborar una gran diversidad de herramientas.\nRecurrieron a rocas muy duras, principalmente chert, cuya forma redondeada y estructura facilitaba la elaboración de objetos cortantes como esta raedera empleada para desprender el cuero de los animales.",
+            "Los indígenas usaron la piedra para elaborar una gran diversidad de herramientas. Recurrieron a rocas muy duras, principalmente chert, cuya forma redondeada y estructura facilitaba la elaboración de objetos cortantes como esta raedera empleada para desprender el cuero de los animales.",
           markers: [
             {
               id: 1,
-              list: "La transparencia es una característica propia de rocas ricas en sílice como el chert ",
+              list: "La transparencia es una característica propia de rocas ricas en sílice como el chert.",
             },
             {
               id: 2,
-              list: "El filo cortante fue obtenido por la técnica de presión aplicada en ambos lados",
+              list: "El filo cortante fue obtenido por la técnica de presión aplicada en ambos lados.",
             },
           ],
         },
@@ -368,7 +307,6 @@ const translations = {
       btnHome: "Home",
       btnBack: "Back",
       btnNext: "Next",
-
       settings: {
         menuFont: "Larger Font",
         menuContrast: "Higher Contrast",
@@ -378,125 +316,294 @@ const translations = {
       titulo: "Secrets of a Cartagena House",
       indice: [
         "The colonial city",
-        // "The colonial house",
-        "House excavations",
-        "The objects",
+        "Excavations in the house",
+        "Things from the past",
       ],
       boton: "Start tour",
     },
     map: {
       sideTitle: "The colonial city",
       sideParagraph:
-        "Explore the archaeological points of interest on this detailed map of Cartagena. Click on the markers to get more information about each location.",
-      sideBibliography: {
-        title: "Bibliography",
-        books: [
-          {
-            title:
-              "History of Cartagena de Indias During the Spanish Domination",
-            author: "Gabriel Porras Troconis",
-            footer: "National Library of Colombia, 1954",
-          },
-          {
-            title:
-              "Cartagena de Indias: City and Port During the Colonial Period",
-            author: "Carmen Borrego Plá",
-            footer: "Editorial School of Hispanic American Studies, 1983",
-          },
-          {
-            title: "The Colombian Caribbean in Colonial History",
-            author: "Alfonso Múnera",
-            footer: "El Áncora Publishers, 1998",
-          },
-        ],
-      },
+        "Cartagena was built on land where Malibú indigenous people had settled, in the bay. In 1533 Pedro de Heredia founded the port city there, despite the shortage of water suitable for drinking, because of the advantages the site offered for the arrival of ships and for defending the city. Many plans of the city still exist which enable us to see how it became transformed with the passing of the centuries. This plan shows Cartagena and its surrounding area in 1586, when the city was besieged and plundered by the privateer Francis Drake.\nExplore the blocks and the houses with the magnifying glass.  ",
       markers: [
         {
           id: 0,
           caption: "1",
-          title: "Plaza Real",
-          description: "Important historical and religious site",
-          button: "",
+          title: "Plaza Real (Royal Square)",
+          description:
+            "The Plaza Real (Royal Square), or Plaza de la Aduana (Custom House Square), as it is called today, was the centre for trade and where people from Africa were auctioned, to be enslaved, and merchandise was offered for sale. The trading of people was covered by the principle whereby a human could be the owner of another human and of that person's descendants. This square, like the one known today as Plaza del Reloj (Clock Square), witnessed the trafficking and exploitation of humans for a very long time. ",
         },
         {
           id: 1,
           caption: "2",
-          title: "New1",
-          description: "Cartagena's historic downtown",
+          title: "Plaza Mayor (Main Square)",
+          description:
+            "The administration square, known as the Plaza Mayor and today as Bolívar Park, was where colonial institutions that governed life in the city and the lives of its inhabitants were established. Few houses in this square had private owners.",
         },
         {
           id: 2,
           caption: "3",
-          title: "Plaza Mayor",
-          description: "Cartagena's historic downtown",
+          description:
+            "In 1570, Cartagena had about 400 houses built of stone and bahareque, wattle and daub. A fire in 1552 had destroyed buildings made of palm and reed. In Drake's attack in 1586, the city once more lost half of its houses. By order of the council, the owners were obliged to rebuild them in masonry (stone and brick).",
+          list: "Houses with lime frontages#Houses made of bahareque (wattle and daub) or wood",
         },
         {
           id: 3,
           caption: "4",
-          title: "New 2",
-          description: "Cartagena's historic downtown",
-          button: "Visit the house",
+          title:
+            "The block where the Zenú Gold Museum now stands, during the siege by Drake.",
+          list: "Provincial Government building#Jailer's house#Centres of blocks green because of the vegetable gardens#Zenú Gold Museum house#Pharmacy",
+          button: "Visit the excavation of the house",
         },
       ],
     },
-    casa: {
-      sideTitle: "Colonial House",
-      sideParagraph:
-        "Explore the map of this 17th-18th century colonial house. Click on the points of interest to get more information about each area.",
-      sideBibliography: {
-        title: "Bibliography",
-        books: [
-          {
-            title:
-              "Historia de Cartagena de Indias durante la dominación española",
-            author: "Gabriel Porras Troconis",
-            footer: "Biblioteca Nacional de Colombia, 1954",
-          },
-          {
-            title:
-              "Cartagena de Indias: Ciudad y puerto durante el periodo colonial",
-            author: "Carmen Borrego Plá",
-            footer: "Editorial Escuela de Estudios Hispanoamericanos, 1983",
-          },
-          {
-            title: "El Caribe colombiano en la historia colonial",
-            author: "Alfonso Múnera",
-            footer: "El Áncora Editores, 1998",
-          },
-        ],
-      },
-      markers: [
-        {
-          caption: "1",
-          title: "Aljibeition",
-          description:
-            "Depositation of aguation subterranation typical of las casas coloniales.",
-          button: "Ver excavacion",
-        },
-      ],
-    },
+
     excavacion: {
       sideTitle: "House excavations",
       sideParagraph:
-        "Observe the different layers of the archaeological excavation. Click on points of interest to get more information and access the 3D view.",
+        "Archaeologists chose two strategic areas that were to be excavated at the Zenú Gold Museum house. Different information was obtained in each one.\nIn the dig in the house's former vegetable garden or plot, where the inhabitants of colonial houses used to dispose of their rubbish, traces were found of a 19th century latrine, together with numerous artefacts. The dig at the side of the well, which was the waste water well, revealed information about the pre-Hispanic indigenous settlers and the initial contact with the Spaniards.",
+
       markers: [
         {
           caption: "1",
-          title: "Archaeological piece",
+          title: "The cesspool",
+          sideParagraph:
+            "The cesspool, which was built near the kitchen and the well, served as a drain for dirty water resulting from domestic activities. The archaeological dig in this area unearthed an alteration in the layers of soil, due to the construction of the well. Objects from everyday indigenous life were found in these layers.",
           description:
-            "This is the description of the archaeological piece. Click the button to see more details.",
-          button: "Go to piece",
+            "This is the archaeological drawing of a stratigraphic profile. Each stratum or level is a store of activities resulting from human occupation or a natural event. Here, the strata are mixed up.",
+        },
+        {
+          caption: "2",
+          title: "What a latrine tells us",
+          sideParagraph:
+            "A latrine is a structure with a pit where human excrement is deposited, thereby helping to reduce health and sanitation problems. An accumulation of objects was found during the dig in the house's latrine, and these tell us about the remedies that were used for fighting the commonest illnesses in the city, personal care, and table practices. ",
+          description:
+            "In this stratigraphic profile, small chamber pots, bottles and other utensils that were thrown away when the latrine was closed down in the 20th century can be seen in the upper part.",
+          button: "Cerrar",
         },
       ],
       botones: {
-        linkPiezas: "Explore pieces",
+        linkNext: "Explore the excavations",
+        linkPiezas: "Explore the artefacts",
+        reset: "Restart exploration",
       },
     },
-
     piezas: {
-      sideTitle: "The objects",
+      sideTitle: "Cosas del pasado",
       sideParagraph:
-        "Explore this archaeological piece in detail using the tools available.",
+        "Archaeologists use technical drawings and three-dimensional models to reconstruct the original shape of objects from the fragments found in excavations. For example, the edges enable the diameter of pots to be projected, while the edges of the body of containers reveal their configuration.\nTo obtain information about how they were made and how they were used, they use different types of microscopes that enlarge the image up to several thousand times and enable them to explore the details of the fragment at a microstructural level. Macroscopic analysis, which is done with the human eye and other senses, helps them to identify other aspects.\nExplore all these levels of information.",
+      modelos: [
+        {
+          id: 4,
+          title: "Funnel",
+          sideTitle: "19th century English funnel",
+          sideParagraph:
+            "The blue design on this funnel fragment was initially engraved on a copper plate by a craftsman. It was then printed in a blue ink with cobalt oxide on a silk paper that was affixed to the top of the unglazed surface (first firing of the earthenware), coated with a layer of white enamel.\nTo give it its shiny glaze, a transparent enamel was applied, and it was then fired again. In this process, the design was transferred to the object.",
+          markers: [
+            {
+              id: 1,
+              list: "Join of the design printed on the paper",
+            },
+          ],
+        },
+        {
+          id: 13,
+          title: "Pot",
+          sideTitle: "Kitchen pot of African tradition",
+          sideParagraph:
+            "Some of the vessels that were used in colonial Cartagena kitchens were made by enslaved Africans and “free negroes”. They met the continuous and growing demand in the city for these utensils and, with their traditions, contributed to techniques, forms and decorations.",
+          markers: [
+            {
+              id: 1,
+              description:
+                "Ungulate decoration; in other words, made with fingerprints, a typical African pottery tradition.",
+            },
+            {
+              id: 2,
+              description: "Remains of cooked food.",
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: "Bottle",
+          sideTitle: "Bottle for syrup",
+          sideParagraph:
+            "Some of the bottles that were excavated had been used as containers for medicines, and while some had been made locally, such as those from Román Pharmacy, which was near the Zenú Gold Museum house, others had been imported from the United States and Europe.\nThis bottle contained a syrup that calmed tooth flare-up pain in children. Although this drug had first been produced in the 19th century, it was not until the 20th century that one of its contents, morphine, was discovered to be lethal for infants. ",
+          markers: [
+            {
+              id: 1,
+              list: "The medicine's proprietors: Curtis was the son-in-law of Mrs Winslow and Perkins, her partner#The name of the medicine comes from Doctor Charlotte N. Winslow, Curtis' mother-in-law.  Associating the syrup with a woman gave it an air of motherly trust#Name of the pharmaceutical company",
+            },
+          ],
+        },
+        {
+          id: 3,
+          title: "Toothbrush",
+          sideTitle: "Bone toothbrush",
+          sideParagraph:
+            "Bone and animal-hair toothbrushes were used in Europe from the 17th century, when they were considered to be luxury objects, until early in the 20th century. The biggest producers of these brushes were England, Germany, France and Japan. Mass production came only with the invention of the perforation machine, in 1870.",
+          markers: [
+            {
+              id: 1,
+              list: "Standardization of the size of the holes as an indicator of industrial production.",
+            },
+          ],
+        },
+        {
+          id: 10,
+          title: "Bowl",
+          sideTitle: "Spanish wide bowl",
+          sideParagraph:
+            "Wide bowls were used for serving soups, broths or stews that were eaten with a spoon or sipped. This one is of the type known as Smooth Columbia, a Spanish majolica made between 1490 and 1550. Its shiny, glazed surface was obtained using crushed lead, and the white colour with tin. This latter technique was introduced in Spain by the Arabs",
+          markers: [
+            {
+              id: 1,
+              description:
+                "Outer glaze eroded by contact with the soil where the bowl was buried.",
+            },
+            {
+              id: 2,
+              list: "The glaze on the inner surface is thicker and better preserved.#Ceramic paste of the bowl.",
+            },
+          ],
+        },
+        {
+          id: 11,
+          title: "Fragment of indigenous pottery",
+          sideTitle: "fragment of Crespo-type indigenous pottery",
+          sideParagraph:
+            "The decoration, colour and material of this fragment mean that it can be associated with the Crespo type of pottery defined by archaeologist Alicia Dussán. This indigenous pottery has been found in contexts dating from pre-Hispanic times to early in the 19th century, and bears testimony to the fact that local pottery traditions continued long after the Spanish invasion.",
+          markers: [
+            {
+              id: 1,
+              description: "Incised V-shaped and dotted decoration.",
+            },
+            {
+              id: 2,
+              list: "These sandy areas that were included in the clay puddle were used as a degreasing agent to strengthen the clay.",
+            },
+            {
+              id: 3,
+              description:
+                "The dark core of the ceramic fragment is evidence of the oxidation of organic matter in the clay, due to a firing process that did not exceed 600°C.",
+            },
+          ],
+        },
+        {
+          id: 9,
+          title: "Budare",
+          sideTitle: "Budare (flat baking pan)",
+          sideParagraph:
+            "Cassava, a plant which originated in America, had been used since pre-Hispanic times for making cassava bread or tortillas. The cassava was grated and squeezed to make the dough. It was then spread out and grilled on the hot baking pan. Corn tortillas were prepared on it, and it was also used for grilling seeds. The Spaniards quickly incorporated these foods into their diet, as well as using the utensils.",
+          markers: [
+            {
+              id: 1,
+              list: "The layer of soot indicates that the flat baking pan had been placed over the fire.",
+            },
+            {
+              id: 2,
+              list: "Vitrification of the silicon content caused by heat.",
+            },
+            {
+              id: 3,
+              list: "Corrosion seam of an ore rich in iron.",
+            },
+            {
+              id: 4,
+              list: "Salt concretions formed by reaction with the soil.",
+            },
+          ],
+        },
+        {
+          id: 6,
+          title: "Bowl",
+          sideTitle: "English bowl with floral design",
+          sideParagraph:
+            "The fragments of industrial earthenware found in the house not only tell us about the tastes of the members of the household, they also reveal information about production techniques in different places and at different times in Europe, where the English were the biggest producers and exporters, and to a lesser extent the French, Germans and Spaniards.\nThis is a 19th century hand-painted English earthenware bowl.",
+          markers: [
+            {
+              id: 1,
+              description: "Hand-painted floral designs.",
+            },
+          ],
+        },
+        {
+          id: 8,
+          title: "Chamber pot",
+          sideTitle: "Chamber pot",
+          sideParagraph:
+            "During much of the colonial era, the idea of hygiene was different from today. Urine and faeces were deposited in chamber pots, which were kept under beds or placed in a toilet chair.\nWhen this waste was not poured into the vegetable garden, the cesspool or the latrine, it was thrown into the street. Without rain, this practice contributed to the unhealthy environment in Cartagena de Indias.",
+          markers: [
+            {
+              id: 1,
+              list: "Glazed Surface#Ceramic paste",
+            },
+          ],
+        },
+        {
+          id: 7,
+          title: "English chamber pot",
+          sideTitle: "English chamber pot",
+          sideParagraph:
+            "This chamber pot, decorated using the transfer technique, shows a motif that was perhaps produced by English artist W. H. Bartlett (1809-1854). His engravings in steel of idealised landscapes in Great Britain, the United States, Canada and the Near East are well-known. Based on the decoration and colour, the small chamber pot was made in England in the mid-19th century.",
+          markers: [
+            {
+              id: 1,
+              description:
+                "To distinguish themselves, each earthenware factory designed one or more trademarks, which were printed on the base of the object.",
+            },
+          ],
+        },
+        {
+          id: 1,
+          title: "Amphora",
+          sideTitle: "Amphora for wine and oil",
+          sideParagraph:
+            "Amphorae made in Spain were a popular container for liquids in colonial America. They arrived on ships loaded with wine or olive oil, and helped with the weight of the vessel. Once these liquids had been consumed, the amphorae were used to store water for drinking or other fermented beverages.",
+
+          markers: [
+            {
+              id: 1,
+              description: "Surface lime bath prior to firing.",
+            },
+          ],
+        },
+        {
+          id: 5,
+          title: "Dish",
+          sideTitle: "Shallow Seville dish",
+          sideParagraph:
+            "This blue-on-blue dish was made in the Triana district of Seville between 1550 and 1630. Earthenware of this kind sought to imitate both Italian pottery and Chinese porcelain.\nIt could have been part of the Matute family's household goods as they attempted to preserve table practices and Hispanic tastes in America when it came to eating their food.  ",
+          markers: [
+            {
+              id: 1,
+              list: "Opaque glaze in two shades of blue.",
+            },
+            {
+              id: 2,
+              list: "Original paste burned before applying the enamel (unglazed).",
+            },
+          ],
+        },
+        {
+          id: 12,
+          title: "Scraper",
+          sideTitle: "Stone scraper",
+          sideParagraph:
+            "Indigenous peoples used stone for making a wide range of tools. They favoured very hard rocks, mainly chert, since its rounded shape and structure lent itself to making sharp objects like this scraper, which was used for stripping the skin off animals.",
+          markers: [
+            {
+              id: 1,
+              list: "Transparency is a characteristic of silicon-rich rocks like chert.",
+            },
+            {
+              id: 2,
+              list: "The sharp edge was obtained by applying pressure on both sides.",
+            },
+          ],
+        },
+      ],
     },
   },
 };
